@@ -7,6 +7,33 @@
 //
 
 import UIKit
+import SwiftyVK
+
+extension UIApplication {
+    
+    var statusBarView: UIView? {
+        return value(forKey: "statusBar") as? UIView
+    }
+    
+}
+
+struct ReportCache {
+    var title: String!
+    var descr: String!
+    var product: Int!
+    var level: Int!
+    var tags: [AddReportViewController.Tag]!
+    var vulnerability: Bool!
+}
+
+var reportCache: ReportCache?
+
+var profileURL  =   "",
+    userId      =   ""
+
+var accessToken: String!
+
+var vkDelegateReference : SwiftyVKDelegate?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +42,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        UIApplication.shared.statusBarStyle = .lightContent
+        UIApplication.shared.statusBarView?.backgroundColor = .clear
+        
+        vkDelegateReference = VKDelegate()
+        
+        return true
+    }
+    
+    @available(iOS 9.0, *)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        let app = options[.sourceApplication] as? String
+        VK.handle(url: url, sourceApplication: app)
+        return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        VK.handle(url: url, sourceApplication: sourceApplication)
         return true
     }
 

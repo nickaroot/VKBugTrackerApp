@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="ProductsTableViewCell" customModule="VKBugTrackerApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zyV-Ut-zjI">
+                        <rect key="frame" x="16" y="6" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="IZJ-0T-33L"/>
+                            <constraint firstAttribute="height" constant="30" id="hfX-an-Jrv"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 отчета" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Bj-86-Jf9">
+                        <rect key="frame" x="210" y="13.5" width="94" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="94" id="uon-70-dFB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Баг-трекер" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCg-Hz-q89">
+                        <rect key="frame" x="54" y="12" width="148" height="19.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19.5" id="Fc3-Yl-gtW"/>
+                            <constraint firstAttribute="width" constant="148" id="p8c-0t-QuH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="OCg-Hz-q89" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Bl4-pa-hhg"/>
+                    <constraint firstItem="1Bj-86-Jf9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Qqd-Kt-vkz"/>
+                    <constraint firstItem="zyV-Ut-zjI" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="YX0-Fp-Bed"/>
+                    <constraint firstItem="1Bj-86-Jf9" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="fpP-b1-kvs"/>
+                    <constraint firstItem="OCg-Hz-q89" firstAttribute="leading" secondItem="zyV-Ut-zjI" secondAttribute="trailing" constant="8" id="wXn-DS-oG1"/>
+                    <constraint firstItem="zyV-Ut-zjI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="yk2-s6-I2D"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="pCountLabel" destination="1Bj-86-Jf9" id="S5b-ro-Rha"/>
+                <outlet property="pImageView" destination="zyV-Ut-zjI" id="XK5-b6-MMR"/>
+                <outlet property="pTitleLabel" destination="OCg-Hz-q89" id="jiP-LO-nFn"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
