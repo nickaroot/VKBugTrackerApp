@@ -24,6 +24,8 @@
 		C331B6921FF704A000AD0984 /* NavigationBarHideShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B6911FF704A000AD0984 /* NavigationBarHideShadow.swift */; };
 		C331B6941FF722B900AD0984 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B6931FF722B900AD0984 /* HexColor.swift */; };
 		C331B69A1FF76D8400AD0984 /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B6991FF76D8400AD0984 /* TextFieldWithPadding.swift */; };
+		C364A6EA2038C6580049DAD1 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C364A6E82038C6510049DAD1 /* Kanna.framework */; };
+		C364A6EB2038C6580049DAD1 /* Kanna.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C364A6E82038C6510049DAD1 /* Kanna.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C3688180200203430075A6E3 /* AttachmentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C368817E200203430075A6E3 /* AttachmentsCollectionViewCell.swift */; };
 		C3688181200203430075A6E3 /* AttachmentsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C368817F200203430075A6E3 /* AttachmentsCollectionViewCell.xib */; };
 		C368818520036BA50075A6E3 /* Attachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C368818420036BA50075A6E3 /* Attachments.swift */; };
@@ -31,8 +33,6 @@
 		C37CA6F51FF7EE5C00EDA83E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37CA6F41FF7EE5C00EDA83E /* LaunchScreen.storyboard */; };
 		C37CA6F71FF8860E00EDA83E /* TagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37CA6F61FF8860E00EDA83E /* TagsTableViewCell.swift */; };
 		C37CA6FB1FF887C500EDA83E /* TagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C37CA6FA1FF887C500EDA83E /* TagsTableViewCell.xib */; };
-		C3A25F3D1FF0C351000510C9 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3A25F3C1FF0C23F000510C9 /* Kanna.framework */; };
-		C3A25F3E1FF0C351000510C9 /* Kanna.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3A25F3C1FF0C23F000510C9 /* Kanna.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C3AC5D431FFEA7C6005A9242 /* AttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC5D411FFEA7C6005A9242 /* AttachmentsViewController.swift */; };
 		C3BFD2471FFCDFBF002E44FA /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BFD2451FFCDFBF002E44FA /* ProductsTableViewCell.swift */; };
 		C3BFD2481FFCDFBF002E44FA /* ProductsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3BFD2461FFCDFBF002E44FA /* ProductsTableViewCell.xib */; };
@@ -43,7 +43,6 @@
 		C3D231B51FF00676008C66FC /* VKBugTrackerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D231B41FF00676008C66FC /* VKBugTrackerAppTests.swift */; };
 		C3D231C01FF00676008C66FC /* VKBugTrackerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D231BF1FF00676008C66FC /* VKBugTrackerAppUITests.swift */; };
 		C3D231CE1FF006CF008C66FC /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D231CD1FF006CF008C66FC /* AuthViewController.swift */; };
-		C3EF9DCD1FFEC1F50001AD15 /* SwiftyVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3EF9DCE1FFEC1F50001AD15 /* SwiftyVK.framework */; };
 		C3EF9DD01FFEC8220001AD15 /* VKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EF9DCF1FFEC8220001AD15 /* VKDelegate.swift */; };
 		C3EF9DD11FFECA300001AD15 /* SwiftyVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3EF9DCE1FFEC1F50001AD15 /* SwiftyVK.framework */; };
 		C3EF9DD21FFECA300001AD15 /* SwiftyVK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3EF9DCE1FFEC1F50001AD15 /* SwiftyVK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -74,7 +73,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C3A25F3E1FF0C351000510C9 /* Kanna.framework in Embed Frameworks */,
+				C364A6EB2038C6580049DAD1 /* Kanna.framework in Embed Frameworks */,
 				C3EF9DD21FFECA300001AD15 /* SwiftyVK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -100,6 +99,7 @@
 		C331B6911FF704A000AD0984 /* NavigationBarHideShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarHideShadow.swift; sourceTree = "<group>"; };
 		C331B6931FF722B900AD0984 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
 		C331B6991FF76D8400AD0984 /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
+		C364A6E82038C6510049DAD1 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C368817E200203430075A6E3 /* AttachmentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C368817F200203430075A6E3 /* AttachmentsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttachmentsCollectionViewCell.xib; sourceTree = "<group>"; };
 		C368818420036BA50075A6E3 /* Attachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachments.swift; sourceTree = "<group>"; };
@@ -108,7 +108,6 @@
 		C37CA6F41FF7EE5C00EDA83E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C37CA6F61FF8860E00EDA83E /* TagsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTableViewCell.swift; sourceTree = "<group>"; };
 		C37CA6FA1FF887C500EDA83E /* TagsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsTableViewCell.xib; sourceTree = "<group>"; };
-		C3A25F3C1FF0C23F000510C9 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3AC5D411FFEA7C6005A9242 /* AttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsViewController.swift; sourceTree = "<group>"; };
 		C3BFD2451FFCDFBF002E44FA /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 		C3BFD2461FFCDFBF002E44FA /* ProductsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsTableViewCell.xib; sourceTree = "<group>"; };
@@ -137,9 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C364A6EA2038C6580049DAD1 /* Kanna.framework in Frameworks */,
 				C3EF9DD11FFECA300001AD15 /* SwiftyVK.framework in Frameworks */,
-				C3EF9DCD1FFEC1F50001AD15 /* SwiftyVK.framework in Frameworks */,
-				C3A25F3D1FF0C351000510C9 /* Kanna.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,8 +242,8 @@
 		C3D231D81FF00C14008C66FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C364A6E82038C6510049DAD1 /* Kanna.framework */,
 				C3EF9DCE1FFEC1F50001AD15 /* SwiftyVK.framework */,
-				C3A25F3C1FF0C23F000510C9 /* Kanna.framework */,
 				C36C1A891FF03BC200DD4631 /* libxml2.2.dylib */,
 				C3D231E61FF00E6A008C66FC /* libxml2.tbd */,
 				C3D231D91FF00C14008C66FC /* libxml2.2.tbd */,
@@ -584,7 +582,7 @@
 				DEVELOPMENT_TEAM = Y7BEBZQYA6;
 				INFOPLIST_FILE = VKBugTrackerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = nickaroot.VKBugTrackerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -603,7 +601,7 @@
 				DEVELOPMENT_TEAM = Y7BEBZQYA6;
 				INFOPLIST_FILE = VKBugTrackerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-lxml2";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = nickaroot.VKBugTrackerApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

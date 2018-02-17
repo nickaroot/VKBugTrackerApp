@@ -614,7 +614,7 @@
                     <navigationItem key="navigationItem" id="l9j-ex-0Ec">
                         <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="IjB-nS-bHC">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="7cn-FC-3qz">
-                                <rect key="frame" x="346" y="5" width="24" height="22"/>
+                                <rect key="frame" x="370" y="11" width="24" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="more"/>
                                 <connections>
