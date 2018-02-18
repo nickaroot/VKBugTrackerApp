@@ -82,7 +82,7 @@ final class APIWorker {
 //            .send()
 //    }
 
-    class func removeDocument(sender: AnyObject, item: Int, completion: @escaping (Bool!) -> Swift.Void) {
+    class func removeDocument(sender: AnyObject, item: Int, completion: @escaping (Bool?) -> Swift.Void) {
         
         VK.API.Docs.delete([.ownerId: attachments[item].ownerId, .docId: attachments[item].docId])
             .onSuccess {

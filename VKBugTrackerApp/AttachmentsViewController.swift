@@ -116,7 +116,7 @@ class AttachmentsViewController: UIViewController, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         APIWorker.removeDocument(sender: self, item: indexPath.item) { (complete) in
-            if (complete) {
+            if (complete)! {
                 
                 attachments.remove(at: indexPath.item)
                 
@@ -153,7 +153,7 @@ class AttachmentsViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let url = info["UIImagePickerControllerReferenceURL"] as? URL,
+        let _ = info["UIImagePickerControllerReferenceURL"] as? URL,
             imageUrl = info["UIImagePickerControllerImageURL"] as? URL,
             mediaUrl = info["UIImagePickerControllerMediaURL"] as? URL,
             mediaType = info["UIImagePickerControllerMediaType"] as? String

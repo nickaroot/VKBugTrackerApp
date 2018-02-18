@@ -142,7 +142,7 @@
                                 </constraints>
                             </view>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="S2p-fV-afk">
-                                <rect key="frame" x="134" y="546" width="49" height="31"/>
+                                <rect key="frame" x="119" y="546" width="49" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="47" id="Tl6-wE-yAt"/>
                                     <constraint firstAttribute="height" constant="31" id="eRl-Na-uBD"/>
@@ -152,10 +152,10 @@
                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIJ-Qk-8L8">
-                                <rect key="frame" x="267" y="546" width="115" height="30"/>
+                                <rect key="frame" x="314" y="546" width="68" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="lle-5E-pzL"/>
-                                    <constraint firstAttribute="width" constant="115" id="ylG-q6-4LK"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="ylG-q6-4LK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Вложения">
@@ -204,10 +204,10 @@
                                 </constraints>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGJ-nB-f93">
-                                <rect key="frame" x="32" y="554" width="94" height="18"/>
+                                <rect key="frame" x="32" y="554" width="79" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="ENM-zd-yVv"/>
-                                    <constraint firstAttribute="width" constant="94" id="GL7-jd-IMM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="GL7-jd-IMM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Уязвимость">
@@ -242,6 +242,7 @@
                             <constraint firstItem="S2p-fV-afk" firstAttribute="leading" secondItem="SGJ-nB-f93" secondAttribute="trailing" constant="8" id="Y30-yh-9j9"/>
                             <constraint firstItem="iOq-Pk-m0y" firstAttribute="top" secondItem="SGJ-nB-f93" secondAttribute="bottom" constant="20" id="dsL-Ui-O75"/>
                             <constraint firstItem="uEM-QU-gLc" firstAttribute="top" secondItem="AJm-Gm-UKh" secondAttribute="top" constant="20" id="fGf-Of-dpJ"/>
+                            <constraint firstItem="PIJ-Qk-8L8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="34q-xG-1Pr" secondAttribute="leading" constant="20" symbolic="YES" id="g9x-2s-TDE"/>
                             <constraint firstItem="AJm-Gm-UKh" firstAttribute="trailing" secondItem="xD6-m1-5cl" secondAttribute="trailing" constant="16" id="hfz-7t-27z"/>
                             <constraint firstItem="S2p-fV-afk" firstAttribute="top" secondItem="ts2-Ja-JRy" secondAttribute="bottom" constant="15" id="hog-vq-70H"/>
                             <constraint firstItem="ts2-Ja-JRy" firstAttribute="top" secondItem="i8p-kk-aTG" secondAttribute="bottom" constant="11" id="hwr-V9-vIh"/>
@@ -359,7 +360,7 @@
                                             <constraint firstItem="wKh-kX-3hm" firstAttribute="centerX" secondItem="xmt-mz-ruP" secondAttribute="centerX" id="4uc-Za-05J"/>
                                             <constraint firstItem="PrF-xF-tFD" firstAttribute="leading" secondItem="xmt-mz-ruP" secondAttribute="leading" id="7wq-6y-zyb"/>
                                             <constraint firstAttribute="trailing" secondItem="1cR-Xw-QIR" secondAttribute="trailing" id="AeJ-TZ-4wW"/>
-                                            <constraint firstItem="1cR-Xw-QIR" firstAttribute="leading" secondItem="xmt-mz-ruP" secondAttribute="leading" id="H9B-Lw-w76"/>
+                                            <constraint firstItem="1cR-Xw-QIR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xmt-mz-ruP" secondAttribute="leading" id="H9B-Lw-w76"/>
                                             <constraint firstItem="1cR-Xw-QIR" firstAttribute="top" secondItem="wKh-kX-3hm" secondAttribute="bottom" constant="14" id="KlU-mi-udN"/>
                                             <constraint firstItem="wKh-kX-3hm" firstAttribute="centerY" secondItem="xmt-mz-ruP" secondAttribute="centerY" id="PY2-Y6-T5V"/>
                                             <constraint firstAttribute="trailing" secondItem="QIv-Ec-4U9" secondAttribute="trailing" id="Sp6-fB-ccC"/>
@@ -675,7 +676,7 @@
                                 <rect key="frame" x="132" y="220" width="150" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="GK3-Yh-Mbn"/>
-                                    <constraint firstAttribute="width" constant="150" id="cvY-YV-T67"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="cvY-YV-T67"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -685,7 +686,7 @@
                                 <rect key="frame" x="132" y="273" width="150" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Lzl-fo-PJQ"/>
-                                    <constraint firstAttribute="width" constant="150" id="iEV-wq-BuD"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="iEV-wq-BuD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
