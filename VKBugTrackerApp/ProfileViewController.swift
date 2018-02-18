@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     struct Product {
         let id: Int
         let title: String
-        let cover: String
+        let cover: UIImage
         let count: String
     }
     
@@ -53,7 +53,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let product = products[indexPath.row]
         let cell = Bundle.main.loadNibNamed("ProductsTableViewCell", owner: self, options: nil)?.first as! ProductsTableViewCell
         
-        cell.pImageView.image = UIImage(data: try! Data(contentsOf: URL(string: product.cover)!))
+//        cell.pImageView.image = UIImage(data: try! Data(contentsOf: URL(string: product.cover)!)) // BAD PRACTICE !! SELF ABUSED
+        cell.pImageView.image = product.cover
         cell.pTitleLabel.text = product.title
         cell.pCountLabel.text = product.count
         return cell
@@ -76,7 +77,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.avatarImageView.image = UIImage(data: try! Data(contentsOf: URL(string: avatar!)!))
                 
                 for productRow in doc.css(".bt_reporter_product") {
-                    let cover = productRow.at_css(".bt_reporter_product_img")?["src"]
+                    let cover = UIImage(data: try! Data(contentsOf: URL(string: (productRow.at_css(".bt_reporter_product_img")?["src"])!)!))
                     let title = productRow.at_css(".bt_reporter_product_title")?.text!
                     let id = Int(String(describing: (productRow.at_css(".bt_reporter_product_title")?["href"]!.split(separator: "&")[1])!.split(separator: "=")[1]))
                     let count = String(describing: (productRow.at_css(".bt_reporter_product_nreports")?.text!)!.split(separator: " ")[0])
