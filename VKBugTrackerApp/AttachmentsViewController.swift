@@ -114,13 +114,13 @@ class AttachmentsViewController: UIViewController, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "attachmentsCell", for: indexPath) as! AttachmentsCollectionViewCell
         APIWorker.removeDocument(sender: self, item: indexPath.item) { (complete) in
             if (complete)! {
-                
                 attachments.remove(at: indexPath.item)
-                
+                print(indexPath.item)
                 DispatchQueue.main.async {
+                    cell.isUserInteractionEnabled = false
                     self.collectionView.collectionViewLayout.invalidateLayout()
                     self.collectionView.reloadData()
                 }

@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class AddReportViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UITextViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
+class AddReportViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, UITextViewDelegate, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var descrTextView: UITextView!
     @IBOutlet weak var titleTextField: UITextField!
@@ -103,6 +103,7 @@ class AddReportViewController: UIViewController, WKNavigationDelegate, WKUIDeleg
         descrContainer.layer.cornerRadius = 10
         descrContainer.layer.masksToBounds = true
         
+        titleTextField.delegate = self
         titleContainer.layer.cornerRadius = 10
         titleContainer.layer.masksToBounds = true
         
@@ -167,6 +168,13 @@ class AddReportViewController: UIViewController, WKNavigationDelegate, WKUIDeleg
             }
         }
         tagsTableView.reloadData()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == titleTextField {
+            descrTextView.becomeFirstResponder()
+        }
+        return false
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
