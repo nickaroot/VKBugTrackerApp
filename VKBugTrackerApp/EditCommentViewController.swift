@@ -9,11 +9,15 @@
 import UIKit
 
 class EditCommentViewController: UIViewController {
+    
+    var commentText: String?
 
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        textView.text = commentText
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,5 +26,8 @@ class EditCommentViewController: UIViewController {
     }
     
     
-
+    @IBAction func cancelTouchDown(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

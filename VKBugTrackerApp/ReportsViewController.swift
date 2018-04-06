@@ -12,7 +12,6 @@ import Kanna
 
 class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var addReportButton: UIButton!
@@ -22,6 +21,7 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
         refreshControl: UIRefreshControl!,
         timer: Timer!,
         lastTimestamp = "",
+        lastQuery = "",
         keyboardShowed = false
     
     override func viewDidLoad() {
@@ -92,7 +92,7 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if refreshControl.isRefreshing {
-            parseReports(lastTimestamp, query: "")
+            parseReports(lastTimestamp, query: lastQuery)
             timer = Timer.scheduledTimer(timeInterval: 2, target: self,   selector: (#selector(ReportsViewController.refreshControlEndRefreshing)), userInfo: nil, repeats: true)
         }
     }
@@ -164,15 +164,25 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
                     loadedReports.append(report)
                 }
                 
-                self.lastTimestamp = String(describing: Int(NSDate().timeIntervalSince1970))
+                if (loadedReports.count > 0) {
+                    self.lastTimestamp = String(describing: Int(NSDate().timeIntervalSince1970))
+                }
                 
                 if (query == "") {
                     isSearching = false
                     reports.insert(contentsOf: loadedReports, at: 0)
                 } else {
                     isSearching = true
-                    reportsSearching = loadedReports
+                    
+                    if (query == self.lastQuery) {
+                        reportsSearching.insert(contentsOf: loadedReports, at: 0)
+                    } else {
+                        reportsSearching = loadedReports
+                    }
                 }
+                
+                self.lastQuery = query
+                
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                     self.activityIndicator.stopAnimating()

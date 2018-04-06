@@ -64,7 +64,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if lastProfileId != profileId {
             products.removeAll()
-            getValues()
+            getProfile()
+            getProducts()
         }
         
         closeButton.isHidden = !isModal
@@ -92,10 +93,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.pCountLabel.text = product.count
         return cell
     }
-    func getValues() {
+    func getProfile() {
         DispatchQueue.main.async {
             do {
-                let contents = try String(contentsOf: URL(string: "https://vk.com/bugtracker?act=reporter&id=\(self.profileId!)")!, encoding: .windowsCP1251)
+                let contents = try String(contentsOf: URL(string: "https://vk.com/bugtracker?act=reporter&al=0&al_id=\(userId!)&id=\(self.profileId!)")!, encoding: .windowsCP1251)
                 
                 let doc = try HTML(html: String(describing: contents), encoding: .windowsCP1251)
                 
@@ -107,6 +108,19 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.navigationItem.title = name
                 self.statLabel.text = stat
                 self.avatarImageView.image = UIImage(data: try! Data(contentsOf: URL(string: avatar!)!))
+                
+            } catch {
+                
+            }
+        }
+    }
+    
+    func getProducts() {
+        DispatchQueue.main.async {
+            do {
+                let contents = try String(contentsOf: URL(string: "https://vk.com/bugtracker?act=reporter_products&al=0&al_id=\(userId!)&id=\(self.profileId!)")!, encoding: .windowsCP1251)
+                
+                let doc = try HTML(html: String(describing: contents), encoding: .windowsCP1251)
                 
                 for productRow in doc.css(".bt_reporter_product:not(.bt_reporter_product_unavailable)") {
                     let cover = UIImage(data: try! Data(contentsOf: URL(string: (productRow.at_css(".bt_reporter_product_img")?["src"])!)!))
@@ -121,7 +135,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
                 self.productsTableView.reloadData()
                 self.overallLabel.isHidden = false
-                self.productsTableView.separatorColor = UIColor.gray
+                self.productsTableView.separatorColor = UIColor.lightGray
             } catch {
                 
             }

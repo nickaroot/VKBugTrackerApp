@@ -40,7 +40,8 @@ class ReportAlternativeViewController: UIViewController, UITextViewDelegate, UIT
         error = false
     
     var currentCellHeight = CGFloat(),
-        keyboardSize: CGSize?
+        keyboardSize: CGSize?,
+        currentSelectedCommentId: Int?
     
     let commentsOffset = 2
     
@@ -257,7 +258,8 @@ class ReportAlternativeViewController: UIViewController, UITextViewDelegate, UIT
             alertController.addAction(removeButton)
             
             let editButton = UIAlertAction(title: "Редактировать", style: .default) { (action) in
-//                self.performSegue(withIdentifier: "showEditComment", sender: self)
+                self.currentSelectedCommentId = indexPath.item - self.commentsOffset;
+                self.performSegue(withIdentifier: "showEditComment", sender: self)
             }
             
             alertController.addAction(editButton)
@@ -323,6 +325,10 @@ class ReportAlternativeViewController: UIViewController, UITextViewDelegate, UIT
             profileViewController.profileId = currentAuthorId
             profileViewController.isModal = true
             
+        } else if segue.identifier == "showEditComment" {
+            let editCommentViewController: EditCommentViewController = segue.destination as! EditCommentViewController
+            
+            editCommentViewController.commentText = reportComments[currentSelectedCommentId!].text
         }
     }
     
