@@ -20,9 +20,11 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
     var selectedId: Int?,
         refreshControl: UIRefreshControl!,
         timer: Timer!,
-        lastTimestamp = "",
+        minTimestampLast = "",
+        maxTimestampLast = "",
         lastQuery = "",
-        keyboardShowed = false
+        keyboardShowed = false,
+        reportsIsLoaded = 0
     
     override func viewDidLoad() {
         self.navigationController?.navigationBar.shouldRemoveShadow(true)
@@ -63,13 +65,13 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
         if (searchField.text == "") {
             searchField.textAlignment = .center
             isSearching = false
-            self.parseReports(self.lastTimestamp, query: "")
+            self.parseReports(self.minTimestampLast, "", query: "")
         }
         keyboardShowed = false
     }
     
     @IBAction func searchBarPrimaryAction(_ sender: Any) {
-        self.parseReports("", query: searchField.text!)
+        self.parseReports("", "", query: searchField.text!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,25 +85,25 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         DispatchQueue.main.async {
             if (isSearching) {
-                self.parseReports("", query: self.searchField.text!)
+                self.parseReports("", "", query: self.searchField.text!)
             } else {
-                self.parseReports(self.lastTimestamp, query: "")
+                self.parseReports(self.minTimestampLast, "", query: "")
             }
         }
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if refreshControl.isRefreshing {
-            parseReports(lastTimestamp, query: lastQuery)
+            parseReports(minTimestampLast, "", query: lastQuery)
             timer = Timer.scheduledTimer(timeInterval: 2, target: self,   selector: (#selector(ReportsViewController.refreshControlEndRefreshing)), userInfo: nil, repeats: true)
         }
     }
     
-    func parseReports(_ timestamp: String, query: String) {
+    func parseReports(_ minTimestamp: String, _ maxTimestamp: String, query: String) {
         
         var request = URLRequest(url: URL(string: "https://vk.com/bugtracker")!)
         request.httpMethod = "POST"
-        let postString = "al=1&load=1&min_udate=\(timestamp)&q=\(query)"
+        let postString = "al=1&load=1&min_udate=\(minTimestamp)&q=\(query)"
         request.httpBody = postString.data(using: .utf8)
         request.addValue("XMLHttpRequest", forHTTPHeaderField: "x-requested-with")
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -165,7 +167,14 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
                 
                 if (loadedReports.count > 0) {
-                    self.lastTimestamp = String(describing: Int(NSDate().timeIntervalSince1970))
+                    self.minTimestampLast = String(describing: Int(NSDate().timeIntervalSince1970))
+                } else {
+                    if (self.reportsIsLoaded != 2) {
+                        self.reportsIsLoaded += 1
+                        self.parseReports(minTimestamp, maxTimestamp, query: query)
+                    } else {
+                        print("Parsing Error")
+                    }
                 }
                 
                 if (query == "") {

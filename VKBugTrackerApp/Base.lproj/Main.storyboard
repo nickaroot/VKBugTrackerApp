@@ -14,7 +14,7 @@
             <objects>
                 <navigationController title="Reports Navigation" id="96W-JP-JkC" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" title="" image="list" id="1pF-Im-bah">
+                    <tabBarItem key="tabBarItem" title="" image="feed" id="1pF-Im-bah">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Ukr-Qj-vTi">
@@ -572,8 +572,7 @@
                                 <rect key="frame" x="370" y="2" width="24" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
-                                <state key="normal" image="write">
+                                <state key="normal" image="compose">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -755,11 +754,11 @@
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="ProfileViewController" customModule="VKBugTrackerApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfY-Vf-IX6">
-                                <rect key="frame" x="132" y="194" width="150" height="49"/>
+                                <rect key="frame" x="132" y="174" width="150" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="GK3-Yh-Mbn"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="cvY-YV-T67"/>
@@ -769,7 +768,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В общем рейтинге" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d3K-Jp-NSa">
-                                <rect key="frame" x="132" y="247" width="150" height="21"/>
+                                <rect key="frame" x="132" y="227" width="150" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Lzl-fo-PJQ"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="iEV-wq-BuD"/>
@@ -778,12 +777,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fpJ-Vm-9ML">
-                                <rect key="frame" x="20" y="298" width="374" height="418"/>
+                                <rect key="frame" x="20" y="278" width="374" height="325"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gZb-rg-XU6">
-                                <rect key="frame" x="132" y="40" width="150" height="150"/>
+                                <rect key="frame" x="132" y="20" width="150" height="150"/>
                                 <color key="backgroundColor" red="0.92155379056930542" green="0.9215739369392395" blue="0.92156821489334106" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="bcA-Lk-LPX"/>
@@ -791,7 +790,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dlq-ai-4F0">
-                                <rect key="frame" x="334" y="20" width="60" height="30"/>
+                                <rect key="frame" x="334" y="0.0" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="QgG-KT-9QF"/>
                                     <constraint firstAttribute="height" constant="30" id="ghD-Eo-PAZ"/>
@@ -802,7 +801,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hon-Cr-H0R">
-                                <rect key="frame" x="188.66666666666666" y="239" width="37" height="37"/>
+                                <rect key="frame" x="188.66666666666666" y="219" width="37" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="JyZ-xu-dY5"/>
                                     <constraint firstAttribute="width" constant="37" id="h9C-mI-crl"/>
@@ -930,15 +929,15 @@
     <resources>
         <image name="VKTesters-cover" width="1280" height="800"/>
         <image name="attach" width="20" height="20"/>
+        <image name="compose" width="24" height="24"/>
         <image name="doc" width="96" height="96"/>
-        <image name="list" width="24" height="24"/>
+        <image name="feed" width="24" height="24"/>
         <image name="more" width="24" height="5"/>
         <image name="search" width="15" height="15"/>
         <image name="send-arrow" width="40" height="40"/>
         <image name="user" width="24" height="24"/>
-        <image name="write" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="V00-W5-EIE"/>
+        <segue reference="I8q-jq-eeU"/>
     </inferredMetricsTieBreakers>
 </document>

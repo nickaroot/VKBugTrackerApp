@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "checkbox-pen-outline_24.png",
+      "filename" : "feed_24.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "checkbox-pen-outline_48.png",
+      "filename" : "feed_48.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "checkbox-pen-outline_72.png",
+      "filename" : "feed_72.png",
       "scale" : "3x"
     }
   ],
