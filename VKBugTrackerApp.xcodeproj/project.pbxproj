@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		C300B525202121CC0032FEBB /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C300B524202121CC0032FEBB /* Media.xcassets */; };
-		C300B527202133E80032FEBB /* HtmlEncodedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C300B526202133E80032FEBB /* HtmlEncodedString.swift */; };
+		C300B527202133E80032FEBB /* StringHtmlEncodedExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C300B526202133E80032FEBB /* StringHtmlEncodedExtension.swift */; };
 		C3044DAD1FF0B6A600FB1F74 /* AddReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3044DAA1FF0B6A500FB1F74 /* AddReportViewController.swift */; };
 		C3069C8C200570DE004B2053 /* VideoThumbnailParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069C8B200570DE004B2053 /* VideoThumbnailParser.swift */; };
-		C3069CF6200BDB02004B2053 /* RegExMatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069CF5200BDB02004B2053 /* RegExMatches.swift */; };
+		C3069CF6200BDB02004B2053 /* StringMatchingStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069CF5200BDB02004B2053 /* StringMatchingStringExtension.swift */; };
 		C3069CF9200BEF51004B2053 /* ReportsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069CF7200BEF51004B2053 /* ReportsTableViewCell.swift */; };
 		C3069CFA200BEF51004B2053 /* ReportsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3069CF8200BEF51004B2053 /* ReportsTableViewCell.xib */; };
 		C3069CFD200BF907004B2053 /* ReportsTagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069CFB200BF907004B2053 /* ReportsTagsCollectionViewCell.swift */; };
 		C3069CFE200BF907004B2053 /* ReportsTagsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3069CFC200BF907004B2053 /* ReportsTagsCollectionViewCell.xib */; };
 		C3069D00200C1768004B2053 /* Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069CFF200C1768004B2053 /* Reports.swift */; };
 		C3069D0420101298004B2053 /* RDPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069D0320101298004B2053 /* RDPicker.swift */; };
-		C3069D06201012BC004B2053 /* Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069D05201012BC004B2053 /* Placeholder.swift */; };
+		C3069D06201012BC004B2053 /* TextFieldPlaceholderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069D05201012BC004B2053 /* TextFieldPlaceholderExtension.swift */; };
 		C3096F2B205B550100384D8E /* ReportAttachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3096F2A205B550100384D8E /* ReportAttachments.swift */; };
-		C331B68E1FF3BCB500AD0984 /* TextViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B68D1FF3BCB500AD0984 /* TextViewPlaceholder.swift */; };
-		C331B6901FF66FA900AD0984 /* SizeToFitHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B68F1FF66FA900AD0984 /* SizeToFitHeight.swift */; };
-		C331B6921FF704A000AD0984 /* NavigationBarHideShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B6911FF704A000AD0984 /* NavigationBarHideShadow.swift */; };
-		C331B6941FF722B900AD0984 /* HexColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B6931FF722B900AD0984 /* HexColor.swift */; };
+		C331B68E1FF3BCB500AD0984 /* TextViewPlaceholderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B68D1FF3BCB500AD0984 /* TextViewPlaceholderExtension.swift */; };
+		C331B6901FF66FA900AD0984 /* SizeToFitHeightExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B68F1FF66FA900AD0984 /* SizeToFitHeightExtensions.swift */; };
+		C331B6921FF704A000AD0984 /* NavigationBarHideShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B6911FF704A000AD0984 /* NavigationBarHideShadowExtension.swift */; };
+		C331B6941FF722B900AD0984 /* ColorHexExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B6931FF722B900AD0984 /* ColorHexExtension.swift */; };
 		C331B69A1FF76D8400AD0984 /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B6991FF76D8400AD0984 /* TextFieldWithPadding.swift */; };
 		C3334BB42050BBBB004B1813 /* ReportAttachmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3334BB22050BBBB004B1813 /* ReportAttachmentsTableViewCell.swift */; };
 		C3334BB52050BBBB004B1813 /* ReportAttachmentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3334BB32050BBBB004B1813 /* ReportAttachmentsTableViewCell.xib */; };
@@ -41,6 +41,8 @@
 		C3AB822C2054972400931FED /* ReportCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AB822A2054972400931FED /* ReportCommentTableViewCell.swift */; };
 		C3AB822D2054972400931FED /* ReportCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3AB822B2054972400931FED /* ReportCommentTableViewCell.xib */; };
 		C3AC5D431FFEA7C6005A9242 /* AttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC5D411FFEA7C6005A9242 /* AttachmentsViewController.swift */; };
+		C3AEEB47207948F900CE2438 /* LabelPaddingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AEEB46207948F900CE2438 /* LabelPaddingExtension.swift */; };
+		C3AEEB492079541D00CE2438 /* StringFirstUppercasedExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AEEB482079541D00CE2438 /* StringFirstUppercasedExtension.swift */; };
 		C3BFD2471FFCDFBF002E44FA /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BFD2451FFCDFBF002E44FA /* ProductsTableViewCell.swift */; };
 		C3BFD2481FFCDFBF002E44FA /* ProductsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3BFD2461FFCDFBF002E44FA /* ProductsTableViewCell.xib */; };
 		C3CEBFB7206A92EE0002D322 /* EditCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CEBFB6206A92EE0002D322 /* EditCommentViewController.swift */; };
@@ -96,22 +98,22 @@
 
 /* Begin PBXFileReference section */
 		C300B524202121CC0032FEBB /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		C300B526202133E80032FEBB /* HtmlEncodedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlEncodedString.swift; sourceTree = "<group>"; };
+		C300B526202133E80032FEBB /* StringHtmlEncodedExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHtmlEncodedExtension.swift; sourceTree = "<group>"; };
 		C3044DAA1FF0B6A500FB1F74 /* AddReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportViewController.swift; sourceTree = "<group>"; };
 		C3069C8B200570DE004B2053 /* VideoThumbnailParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailParser.swift; sourceTree = "<group>"; };
-		C3069CF5200BDB02004B2053 /* RegExMatches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegExMatches.swift; sourceTree = "<group>"; };
+		C3069CF5200BDB02004B2053 /* StringMatchingStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringMatchingStringExtension.swift; sourceTree = "<group>"; };
 		C3069CF7200BEF51004B2053 /* ReportsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsTableViewCell.swift; sourceTree = "<group>"; };
 		C3069CF8200BEF51004B2053 /* ReportsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportsTableViewCell.xib; sourceTree = "<group>"; };
 		C3069CFB200BF907004B2053 /* ReportsTagsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsTagsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C3069CFC200BF907004B2053 /* ReportsTagsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportsTagsCollectionViewCell.xib; sourceTree = "<group>"; };
 		C3069CFF200C1768004B2053 /* Reports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reports.swift; sourceTree = "<group>"; };
 		C3069D0320101298004B2053 /* RDPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDPicker.swift; sourceTree = "<group>"; };
-		C3069D05201012BC004B2053 /* Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Placeholder.swift; sourceTree = "<group>"; };
+		C3069D05201012BC004B2053 /* TextFieldPlaceholderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPlaceholderExtension.swift; sourceTree = "<group>"; };
 		C3096F2A205B550100384D8E /* ReportAttachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAttachments.swift; sourceTree = "<group>"; };
-		C331B68D1FF3BCB500AD0984 /* TextViewPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewPlaceholder.swift; sourceTree = "<group>"; };
-		C331B68F1FF66FA900AD0984 /* SizeToFitHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeToFitHeight.swift; sourceTree = "<group>"; };
-		C331B6911FF704A000AD0984 /* NavigationBarHideShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarHideShadow.swift; sourceTree = "<group>"; };
-		C331B6931FF722B900AD0984 /* HexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexColor.swift; sourceTree = "<group>"; };
+		C331B68D1FF3BCB500AD0984 /* TextViewPlaceholderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewPlaceholderExtension.swift; sourceTree = "<group>"; };
+		C331B68F1FF66FA900AD0984 /* SizeToFitHeightExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeToFitHeightExtensions.swift; sourceTree = "<group>"; };
+		C331B6911FF704A000AD0984 /* NavigationBarHideShadowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarHideShadowExtension.swift; sourceTree = "<group>"; };
+		C331B6931FF722B900AD0984 /* ColorHexExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexExtension.swift; sourceTree = "<group>"; };
 		C331B6991FF76D8400AD0984 /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
 		C3334BB22050BBBB004B1813 /* ReportAttachmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAttachmentsTableViewCell.swift; sourceTree = "<group>"; };
 		C3334BB32050BBBB004B1813 /* ReportAttachmentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportAttachmentsTableViewCell.xib; sourceTree = "<group>"; };
@@ -129,6 +131,8 @@
 		C3AB822A2054972400931FED /* ReportCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCommentTableViewCell.swift; sourceTree = "<group>"; };
 		C3AB822B2054972400931FED /* ReportCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportCommentTableViewCell.xib; sourceTree = "<group>"; };
 		C3AC5D411FFEA7C6005A9242 /* AttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsViewController.swift; sourceTree = "<group>"; };
+		C3AEEB46207948F900CE2438 /* LabelPaddingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPaddingExtension.swift; sourceTree = "<group>"; };
+		C3AEEB482079541D00CE2438 /* StringFirstUppercasedExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFirstUppercasedExtension.swift; sourceTree = "<group>"; };
 		C3BFD2451FFCDFBF002E44FA /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 		C3BFD2461FFCDFBF002E44FA /* ProductsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsTableViewCell.xib; sourceTree = "<group>"; };
 		C3CEBFB6206A92EE0002D322 /* EditCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommentViewController.swift; sourceTree = "<group>"; };
@@ -217,19 +221,19 @@
 				C3AC5D411FFEA7C6005A9242 /* AttachmentsViewController.swift */,
 				C3D231CD1FF006CF008C66FC /* AuthViewController.swift */,
 				C3CEBFB6206A92EE0002D322 /* EditCommentViewController.swift */,
-				C331B6931FF722B900AD0984 /* HexColor.swift */,
-				C300B526202133E80032FEBB /* HtmlEncodedString.swift */,
+				C331B6931FF722B900AD0984 /* ColorHexExtension.swift */,
+				C300B526202133E80032FEBB /* StringHtmlEncodedExtension.swift */,
 				C3D231AB1FF00675008C66FC /* Info.plist */,
 				C37CA6F41FF7EE5C00EDA83E /* LaunchScreen.storyboard */,
 				C3D231A31FF00675008C66FC /* Main.storyboard */,
 				C300B524202121CC0032FEBB /* Media.xcassets */,
-				C331B6911FF704A000AD0984 /* NavigationBarHideShadow.swift */,
-				C3069D05201012BC004B2053 /* Placeholder.swift */,
+				C331B6911FF704A000AD0984 /* NavigationBarHideShadowExtension.swift */,
+				C3069D05201012BC004B2053 /* TextFieldPlaceholderExtension.swift */,
 				C3BFD2451FFCDFBF002E44FA /* ProductsTableViewCell.swift */,
 				C3BFD2461FFCDFBF002E44FA /* ProductsTableViewCell.xib */,
 				C3D231A11FF00675008C66FC /* ProfileViewController.swift */,
 				C3069D0320101298004B2053 /* RDPicker.swift */,
-				C3069CF5200BDB02004B2053 /* RegExMatches.swift */,
+				C3069CF5200BDB02004B2053 /* StringMatchingStringExtension.swift */,
 				C3380A83204F3D94003D6EAB /* ReportAlternativeViewController.swift */,
 				C3096F2A205B550100384D8E /* ReportAttachments.swift */,
 				C3D696EB20508E7700C5BF01 /* ReportAttachmentsCollectionViewCell.swift */,
@@ -243,17 +247,19 @@
 				C3D696E82050821E00C5BF01 /* ReportContentTableViewCell.xib */,
 				C3069CFF200C1768004B2053 /* Reports.swift */,
 				C3069CF7200BEF51004B2053 /* ReportsTableViewCell.swift */,
+				C3AEEB482079541D00CE2438 /* StringFirstUppercasedExtension.swift */,
 				C3069CF8200BEF51004B2053 /* ReportsTableViewCell.xib */,
+				C3AEEB46207948F900CE2438 /* LabelPaddingExtension.swift */,
 				C3069CFB200BF907004B2053 /* ReportsTagsCollectionViewCell.swift */,
 				C3069CFC200BF907004B2053 /* ReportsTagsCollectionViewCell.xib */,
 				C3D2319F1FF00675008C66FC /* ReportsViewController.swift */,
 				C36C1A921FF08A9200DD4631 /* ReportViewController.swift */,
 				C38AD5132061D317001BBC9F /* SearchTextField.swift */,
-				C331B68F1FF66FA900AD0984 /* SizeToFitHeight.swift */,
+				C331B68F1FF66FA900AD0984 /* SizeToFitHeightExtensions.swift */,
 				C37CA6F61FF8860E00EDA83E /* TagsTableViewCell.swift */,
 				C37CA6FA1FF887C500EDA83E /* TagsTableViewCell.xib */,
 				C331B6991FF76D8400AD0984 /* TextFieldWithPadding.swift */,
-				C331B68D1FF3BCB500AD0984 /* TextViewPlaceholder.swift */,
+				C331B68D1FF3BCB500AD0984 /* TextViewPlaceholderExtension.swift */,
 				C3069C8B200570DE004B2053 /* VideoThumbnailParser.swift */,
 				C3EF9DCF1FFEC8220001AD15 /* VKDelegate.swift */,
 			);
@@ -441,34 +447,36 @@
 				C3688180200203430075A6E3 /* AttachmentsCollectionViewCell.swift in Sources */,
 				C3D231CE1FF006CF008C66FC /* AuthViewController.swift in Sources */,
 				C3D1D860205BE4FE001AD9A3 /* ReportComments.swift in Sources */,
+				C3AEEB492079541D00CE2438 /* StringFirstUppercasedExtension.swift in Sources */,
 				C3069C8C200570DE004B2053 /* VideoThumbnailParser.swift in Sources */,
 				C331B69A1FF76D8400AD0984 /* TextFieldWithPadding.swift in Sources */,
 				C3069D0420101298004B2053 /* RDPicker.swift in Sources */,
 				C3044DAD1FF0B6A600FB1F74 /* AddReportViewController.swift in Sources */,
-				C331B6941FF722B900AD0984 /* HexColor.swift in Sources */,
+				C331B6941FF722B900AD0984 /* ColorHexExtension.swift in Sources */,
 				C3CEBFB7206A92EE0002D322 /* EditCommentViewController.swift in Sources */,
 				C3069CFD200BF907004B2053 /* ReportsTagsCollectionViewCell.swift in Sources */,
-				C331B6901FF66FA900AD0984 /* SizeToFitHeight.swift in Sources */,
+				C331B6901FF66FA900AD0984 /* SizeToFitHeightExtensions.swift in Sources */,
 				C38AD5142061D317001BBC9F /* SearchTextField.swift in Sources */,
 				C3096F2B205B550100384D8E /* ReportAttachments.swift in Sources */,
 				C3D696E92050821E00C5BF01 /* ReportContentTableViewCell.swift in Sources */,
 				C3380A84204F3D94003D6EAB /* ReportAlternativeViewController.swift in Sources */,
+				C3AEEB47207948F900CE2438 /* LabelPaddingExtension.swift in Sources */,
 				C3D231A21FF00675008C66FC /* ProfileViewController.swift in Sources */,
 				C3EF9DD01FFEC8220001AD15 /* VKDelegate.swift in Sources */,
-				C331B68E1FF3BCB500AD0984 /* TextViewPlaceholder.swift in Sources */,
-				C331B6921FF704A000AD0984 /* NavigationBarHideShadow.swift in Sources */,
+				C331B68E1FF3BCB500AD0984 /* TextViewPlaceholderExtension.swift in Sources */,
+				C331B6921FF704A000AD0984 /* NavigationBarHideShadowExtension.swift in Sources */,
 				C368818520036BA50075A6E3 /* Attachments.swift in Sources */,
 				C3BFD2471FFCDFBF002E44FA /* ProductsTableViewCell.swift in Sources */,
 				C3AB822C2054972400931FED /* ReportCommentTableViewCell.swift in Sources */,
 				C3D2319E1FF00675008C66FC /* AppDelegate.swift in Sources */,
 				C36C1A931FF08A9200DD4631 /* ReportViewController.swift in Sources */,
-				C300B527202133E80032FEBB /* HtmlEncodedString.swift in Sources */,
+				C300B527202133E80032FEBB /* StringHtmlEncodedExtension.swift in Sources */,
 				C3D231A01FF00675008C66FC /* ReportsViewController.swift in Sources */,
-				C3069CF6200BDB02004B2053 /* RegExMatches.swift in Sources */,
+				C3069CF6200BDB02004B2053 /* StringMatchingStringExtension.swift in Sources */,
 				C3D696ED20508E7700C5BF01 /* ReportAttachmentsCollectionViewCell.swift in Sources */,
 				C3334BB42050BBBB004B1813 /* ReportAttachmentsTableViewCell.swift in Sources */,
 				C37CA6F71FF8860E00EDA83E /* TagsTableViewCell.swift in Sources */,
-				C3069D06201012BC004B2053 /* Placeholder.swift in Sources */,
+				C3069D06201012BC004B2053 /* TextFieldPlaceholderExtension.swift in Sources */,
 				C3EF9DD41FFECCFE0001AD15 /* APIWorker.swift in Sources */,
 				C3069D00200C1768004B2053 /* Reports.swift in Sources */,
 				C3069CF9200BEF51004B2053 /* ReportsTableViewCell.swift in Sources */,

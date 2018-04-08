@@ -27,7 +27,7 @@
                     </label>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.36078431370000003" green="0.56470588239999997" blue="0.78039215689999997" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.37647058820000001" green="0.54117647059999996" blue="0.77647058820000003" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="tagTitle" destination="xVq-9x-idP" id="tVB-rZ-x60"/>

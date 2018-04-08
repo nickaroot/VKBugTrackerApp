@@ -14,7 +14,6 @@ class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tagsCollection: UICollectionView!
     @IBOutlet weak var commentLabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
     
     var item: Int?,
         tagsCount = 0,
@@ -36,15 +35,24 @@ class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
         if (isSearching) {
             if (item! < reportsSearching.count) {
                 tags = reportsSearching[item!].tags
+                tags.insert(Tag(id: -1, type: "status", productId: -1, title: reportsSearching[item!].status.firstUppercased, size: CGSize(width: 1, height: 17)), at: 0)
             }
         } else {
             tags = reports[item!].tags
+            tags.insert(Tag(id: -1, type: "status", productId: -1, title: reports[item!].status.firstUppercased, size: CGSize(width: 1, height: 17)), at: 0)
         }
         
         tagsCount = tags.count
         
         dateLabel.sizeToFit()
-        commentLabel.sizeToFit()
+        
+        commentLabel.layer.cornerRadius = commentLabel.frame.size.height / 2
+        commentLabel.layer.masksToBounds = true
+        
+        if commentLabel.text == "" {
+            commentLabel.backgroundColor = .clear
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
