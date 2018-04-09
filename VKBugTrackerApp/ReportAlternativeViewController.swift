@@ -36,6 +36,7 @@ class ReportAlternativeViewController: UIViewController, UITextViewDelegate, UIT
         imageUrl: URL!,
         reportAttachments = [ReportAttachment](),
         reportComments = [ReportComment](),
+        reportInfo = [ReportInfo](),
         currentAuthorId: String?,
         error = false
     
@@ -43,10 +44,10 @@ class ReportAlternativeViewController: UIViewController, UITextViewDelegate, UIT
         keyboardSize: CGSize?,
         currentSelectedCommentId: Int?
     
-    let commentsOffset = 2
+    let staticRowsOffset = 3
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reportComments.count + commentsOffset
+        return reportComments.count + reportInfo.count + staticRowsOffset
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -159,10 +160,26 @@ class ReportAlternativeViewController: UIViewController, UITextViewDelegate, UIT
                     return cell
                 }
                 
-            } else if (indexPath.item >= commentsOffset) {
+            } else if (indexPath.item >= staticRowsOffset && indexPath.item < staticRowsOffset + reportInfo.count) {
+                let cell = Bundle.main.loadNibNamed("ReportInfoTableViewCell", owner: self, options: nil)?.first as! ReportInfoTableViewCell
+                cell.selectionStyle = .none
+                
+                cell.infoTitle.text = reportInfo[indexPath.item - staticRowsOffset].label
+                cell.values = reportInfo[indexPath.item - staticRowsOffset].value.trimmingCharacters(in: .whitespaces).split(separator: ",").map(String.init)
+                
+                currentCellHeight = cell.contentView.frame.size.height
+                cell.separatorInset = UIEdgeInsetsMake(0, 1000, 0, 0)
+                
+                if (indexPath.item == staticRowsOffset + reportInfo.count - 1) {
+                    cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
+                }
+                
+                return cell
+                
+            } else if (indexPath.item >= staticRowsOffset + reportInfo.count) {
                 let cell = Bundle.main.loadNibNamed("ReportCommentTableViewCell", owner: self, options: nil)?.first as! ReportCommentTableViewCell
                 
-                let reportComment = reportComments[indexPath.item - commentsOffset]
+                let reportComment = reportComments[indexPath.item - staticRowsOffset - reportInfo.count]
                 
                 if reportComment.avatarImage == nil {
                     DispatchQueue.main.async {
@@ -171,8 +188,8 @@ class ReportAlternativeViewController: UIViewController, UITextViewDelegate, UIT
                             return
                         }
                         
-                        self.reportComments[indexPath.item - self.commentsOffset].avatarImage = UIImage(data: imageData)!
-                        cell.authorAvatar.image = self.reportComments[indexPath.item - self.commentsOffset].avatarImage
+                        self.reportComments[indexPath.item - self.staticRowsOffset - self.reportInfo.count].avatarImage = UIImage(data: imageData)!
+                        cell.authorAvatar.image = self.reportComments[indexPath.item - self.staticRowsOffset - self.reportInfo.count].avatarImage
                     }
                 } else {
                     cell.authorAvatar.image = reportComment.avatarImage
@@ -246,67 +263,69 @@ class ReportAlternativeViewController: UIViewController, UITextViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        let item = indexPath.item - self.commentsOffset
-        
-        if let remove = self.reportComments[item].remove {
+        if (indexPath.item >= self.staticRowsOffset + reportInfo.count) {
+            let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            let item = indexPath.item - self.staticRowsOffset - reportInfo.count
             
-            let removeButton = UIAlertAction(title: "Удалить", style: .destructive, handler: { (action) -> Void in
-                self.removeComment(id: remove.id, hash: remove.hash, item: indexPath.item)
-            })
-            
-            alertController.addAction(removeButton)
-            
-            let editButton = UIAlertAction(title: "Редактировать", style: .default) { (action) in
-                self.currentSelectedCommentId = indexPath.item - self.commentsOffset;
-                self.performSegue(withIdentifier: "showEditComment", sender: self)
-            }
-            
-            alertController.addAction(editButton)
-            
-        } else {
-            
-            if commentTextField.isEnabled {
-                let replyButton = UIAlertAction(title: "Ответить", style: .default, handler: { (action) -> Void in
-                    self.commentTextField.text = "\(self.reportComments[item].authorName), \(self.commentTextField.text!)"
-                    self.commentTextField.becomeFirstResponder()
+            if let remove = self.reportComments[item].remove {
+                
+                let removeButton = UIAlertAction(title: "Удалить", style: .destructive, handler: { (action) -> Void in
+                    self.removeComment(id: remove.id, hash: remove.hash, item: indexPath.item)
                 })
                 
-                alertController.addAction(replyButton)
+                alertController.addAction(removeButton)
+                
+                let editButton = UIAlertAction(title: "Редактировать", style: .default) { (action) in
+                    self.currentSelectedCommentId = indexPath.item - self.staticRowsOffset;
+                    self.performSegue(withIdentifier: "showEditComment", sender: self)
+                }
+                
+                alertController.addAction(editButton)
+                
+            } else {
+                
+                if commentTextField.isEnabled {
+                    let replyButton = UIAlertAction(title: "Ответить", style: .default, handler: { (action) -> Void in
+                        self.commentTextField.text = "\(self.reportComments[item].authorName), \(self.commentTextField.text!)"
+                        self.commentTextField.becomeFirstResponder()
+                    })
+                    
+                    alertController.addAction(replyButton)
+                }
+                
             }
             
-        }
-        
-        let copyButton = UIAlertAction(title: "Скопировать", style: .default, handler: { (action) -> Void in
-            UIPasteboard.general.string = self.reportComments[item].text
-        })
-        alertController.addAction(copyButton)
-        
-        self.currentAuthorId = self.reportComments[item].authorId
-        
-        if self.currentAuthorId != nil {
+            let copyButton = UIAlertAction(title: "Скопировать", style: .default, handler: { (action) -> Void in
+                UIPasteboard.general.string = self.reportComments[item].text
+            })
+            alertController.addAction(copyButton)
             
-            let authorButton = UIAlertAction(title: "\(reportComments[item].authorName)", style: .default, handler: { (action) -> Void in
+            self.currentAuthorId = self.reportComments[item].authorId
+            
+            if self.currentAuthorId != nil {
                 
-                DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "showProfileFromReportAlt", sender: self)
-                }
+                let authorButton = UIAlertAction(title: "\(reportComments[item].authorName)", style: .default, handler: { (action) -> Void in
+                    
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "showProfileFromReportAlt", sender: self)
+                    }
+                    
+                })
+                
+                alertController.addAction(authorButton)
+                
+            }
+            
+            let cancelButton = UIAlertAction(title: "Отменить", style: .cancel, handler: { (action) -> Void in
                 
             })
             
-            alertController.addAction(authorButton)
+            alertController.addAction(cancelButton)
             
+            self.navigationController!.present(alertController, animated: true, completion: nil)
+            
+            tableView.deselectRow(at: indexPath, animated: true)
         }
-        
-        let cancelButton = UIAlertAction(title: "Отменить", style: .cancel, handler: { (action) -> Void in
-            
-        })
-        
-        alertController.addAction(cancelButton)
-        
-        self.navigationController!.present(alertController, animated: true, completion: nil)
-        
-        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     @IBAction func commentTextFieldEditingChanged(_ sender: Any) {
@@ -547,6 +566,14 @@ class ReportAlternativeViewController: UIViewController, UITextViewDelegate, UIT
                     
                 }
                 
+                for infoRow in doc.css(".bt_report_one_info_row") {
+                    let label = infoRow.at_css(".bt_report_one_info_row_label")?.text!
+                    let value = infoRow.at_css(".bt_report_one_info_row_value")?.text!
+                    
+                    let info = ReportInfo(label: label!, value: value!)
+                    reportInfo.append(info)
+                }
+                
                 /*
                 sendComment: function() {
                     if (cur.bugreportId && cur.bugreportHash) {
@@ -696,7 +723,7 @@ class ReportAlternativeViewController: UIViewController, UITextViewDelegate, UIT
                 
             }
             
-            self.reportComments.remove(at: item - self.commentsOffset)
+            self.reportComments.remove(at: item - self.reportInfo.count - self.staticRowsOffset)
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
