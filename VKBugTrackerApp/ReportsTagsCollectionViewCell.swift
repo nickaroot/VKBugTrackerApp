@@ -15,8 +15,13 @@ class ReportsTagsCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+//        self.layer.cornerRadius = 4
+//        self.layer.masksToBounds = true
+        
         self.layer.cornerRadius = 4
         self.layer.masksToBounds = true
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.lightGray.cgColor
     }
 
 }

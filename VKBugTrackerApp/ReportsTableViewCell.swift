@@ -48,9 +48,11 @@ class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
         
         commentLabel.layer.cornerRadius = commentLabel.frame.size.height / 2
         commentLabel.layer.masksToBounds = true
+        commentLabel.layer.borderWidth = 1
+        commentLabel.layer.borderColor = UIColor.vkBlue.cgColor
         
         if commentLabel.text == "" {
-            commentLabel.backgroundColor = .clear
+            commentLabel.layer.borderWidth = 0
         }
         
     }

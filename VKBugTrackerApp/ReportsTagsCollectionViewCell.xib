@@ -22,12 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="30" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" red="0.30980392159999998" green="0.51372549020000002" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.37647058820000001" green="0.54117647059999996" blue="0.77647058820000003" alpha="0.14999999999999999" colorSpace="calibratedRGB"/>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
                 <outlet property="tagTitle" destination="xVq-9x-idP" id="tVB-rZ-x60"/>
