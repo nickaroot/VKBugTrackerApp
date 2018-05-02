@@ -99,7 +99,7 @@ class AddReportViewController: UIViewController, WKNavigationDelegate, WKUIDeleg
         placeholderColor = descrTextView.textColor
         
         descrTextView.delegate = self
-        descrTextView.placeholder = "Расскажите о баге более подробно"
+//        descrTextView.placeholder = "Расскажите о баге более подробно"
         descrContainer.layer.cornerRadius = 10
         descrContainer.layer.masksToBounds = true
         
@@ -118,7 +118,7 @@ class AddReportViewController: UIViewController, WKNavigationDelegate, WKUIDeleg
         if reportCache != nil {
             titleTextField.text = reportCache!.title
             descrTextView.text = reportCache!.descr
-            descrTextView.hidePlaceholder()
+//            descrTextView.hidePlaceholder()
             levelsPicker.selectRow(reportCache!.level, inComponent: 0, animated: true)
             vulnerabilitySwitch.setOn(reportCache!.vulnerability, animated: true)
         }

@@ -49,8 +49,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         productsTableView.delegate = self
         productsTableView.dataSource = self
-        productsTableView.layer.cornerRadius = 10
-        productsTableView.layer.masksToBounds = true
         
         self.productsTableView.rowHeight = 60
         

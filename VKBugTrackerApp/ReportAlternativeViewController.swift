@@ -228,7 +228,7 @@ class ReportAlternativeViewController: UIViewController, UITextViewDelegate, UIT
                 
                 cell.separatorInset = UIEdgeInsetsMake(0, 65, 0, 0)
                 
-                if (indexPath.item == reportComments.count + 1) {
+                if (indexPath.item == staticRowsOffset + reportInfo.count + reportComments.count - 1) {
                     cell.separatorInset = UIEdgeInsetsMake(0, 1000, 0, 0)
                 }
                 
@@ -371,10 +371,6 @@ class ReportAlternativeViewController: UIViewController, UITextViewDelegate, UIT
         commentView.layer.addSublayer(border)
         
         sendButton.layer.cornerRadius = sendButton.frame.width / 2
-        
-        commentBackgroundView.layer.borderWidth = 0.5
-        commentBackgroundView.layer.borderColor = UIColor.lightGray.cgColor
-        commentBackgroundView.layer.cornerRadius = 15
         
         refreshControl = UIRefreshControl()
         
@@ -570,7 +566,7 @@ class ReportAlternativeViewController: UIViewController, UITextViewDelegate, UIT
                     let label = infoRow.at_css(".bt_report_one_info_row_label")?.text!
                     let value = infoRow.at_css(".bt_report_one_info_row_value")?.text!
                     
-                    let info = ReportInfo(label: label!, value: value!)
+                    let info = ReportInfo(label: label!, value: value!, size: CGSize(width: 1, height: 21))
                     reportInfo.append(info)
                 }
                 

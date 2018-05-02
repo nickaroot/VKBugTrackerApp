@@ -18,10 +18,9 @@ class ReportsTagsCollectionViewCell: UICollectionViewCell {
 //        self.layer.cornerRadius = 4
 //        self.layer.masksToBounds = true
         
-        self.layer.cornerRadius = 4
+        self.layer.cornerRadius = 10
         self.layer.masksToBounds = true
-        self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.borderWidth = 0
     }
 
 }

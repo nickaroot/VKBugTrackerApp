@@ -16,6 +16,7 @@ class TextFieldWithPadding: UITextField {
         return UIEdgeInsetsInsetRect(bounds,
                                      UIEdgeInsetsMake(0, 15, 0, 15))
     }
+    
     override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
         return UIEdgeInsetsInsetRect(bounds,
                                      UIEdgeInsetsMake(0, 15, 0, 15))

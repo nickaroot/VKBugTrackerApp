@@ -35,11 +35,11 @@ class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
         if (isSearching) {
             if (item! < reportsSearching.count) {
                 tags = reportsSearching[item!].tags
-                tags.insert(Tag(id: -1, type: "status", productId: -1, title: reportsSearching[item!].status.firstUppercased, size: CGSize(width: 1, height: 17)), at: 0)
+                tags.insert(Tag(id: -1, type: "status", productId: -1, title: reportsSearching[item!].status.firstUppercased, size: CGSize(width: 1, height: tagsCollection.contentSize.height - 1)), at: 0)
             }
         } else {
             tags = reports[item!].tags
-            tags.insert(Tag(id: -1, type: "status", productId: -1, title: reports[item!].status.firstUppercased, size: CGSize(width: 1, height: 17)), at: 0)
+            tags.insert(Tag(id: -1, type: "status", productId: -1, title: reports[item!].status.firstUppercased, size: CGSize(width: 1, height: tagsCollection.contentSize.height - 1)), at: 0)
         }
         
         tagsCount = tags.count
@@ -48,11 +48,12 @@ class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
         
         commentLabel.layer.cornerRadius = commentLabel.frame.size.height / 2
         commentLabel.layer.masksToBounds = true
-        commentLabel.layer.borderWidth = 1
-        commentLabel.layer.borderColor = UIColor.vkBlue.cgColor
+        commentLabel.layer.borderWidth = 0
+//        commentLabel.layer.borderColor = UIColor.vkBlue.cgColor
         
         if commentLabel.text == "" {
-            commentLabel.layer.borderWidth = 0
+//            commentLabel.layer.borderWidth = 0
+            commentLabel.alpha = 0
         }
         
     }
@@ -71,7 +72,7 @@ class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
             
             cell.tagTitle.text = tags[indexPath.item].title
             cell.tagTitle.sizeToFit()
-            cell.tagTitle.layer.frame.size = CGSize(width: cell.tagTitle.frame.size.width + 12, height: 17)
+            cell.tagTitle.layer.frame.size = CGSize(width: cell.tagTitle.frame.size.width + tagsCollection.contentSize.height - 3, height: tagsCollection.contentSize.height - 1)
             cell.layer.frame.size = cell.tagTitle.layer.frame.size
 
             tags[indexPath.item].size = cell.tagTitle.layer.frame.size

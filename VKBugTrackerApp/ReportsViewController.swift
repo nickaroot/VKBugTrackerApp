@@ -28,7 +28,7 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
         lastQuery = "",
         keyboardShowed = false,
         reportsIsLoaded = 0,
-        cellHeight: CGFloat = 68,
+        cellHeight: CGFloat = 72,
         cellBuffer: CGFloat = 2,
         loadInProgress = false,
         tableHeight = 0

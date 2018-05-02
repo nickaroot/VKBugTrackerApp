@@ -1,22 +1,18 @@
 //
-//  ReportCommentTableViewCell.swift
+//  ReportActionsTableViewCell.swift
 //  VKBugTrackerApp
 //
-//  Created by Nick Arut on 11.03.2018.
+//  Created by Nick Arut on 02.05.2018.
 //  Copyright © 2018 Nick Aroot. All rights reserved.
 //
 
 import UIKit
 
-class ReportCommentTableViewCell: UITableViewCell {
+class ReportActionsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var authorAvatar: UIImageView!
-    @IBOutlet weak var commentAuthor: UILabel!
-    @IBOutlet weak var commentText: UITextView!
-    @IBOutlet weak var commentDate: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

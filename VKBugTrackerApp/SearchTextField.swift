@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchTextField: UITextField {
+@IBDesignable class SearchTextField: UITextField {
     
     let padding = UIEdgeInsets(top: 0, left: 35, bottom: 0, right: 35);
     

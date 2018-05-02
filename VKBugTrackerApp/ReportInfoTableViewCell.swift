@@ -45,7 +45,7 @@ class ReportInfoTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         
         cell.value.text = values[indexPath.item]
         cell.value.sizeToFit()
-        cell.value.layer.frame.size = CGSize(width: cell.value.frame.size.width + 16, height: 22)
+        cell.value.layer.frame.size = CGSize(width: cell.value.frame.size.width + collectionView.contentSize.height - 3, height: collectionView.contentSize.height - 1)
         cell.layer.frame.size = cell.value.layer.frame.size
         currentCellSize = cell.layer.frame.size
         

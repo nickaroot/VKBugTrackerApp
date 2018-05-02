@@ -11,4 +11,5 @@ import UIKit
 struct ReportInfo {
     let label: String
     let value: String
+    var size: CGSize
 }
