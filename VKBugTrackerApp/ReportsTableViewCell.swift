@@ -20,6 +20,7 @@ class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
         tags = [Tag](),
         blocked = false,
         collectionWidth = CGFloat(0),
+        collectionViewWidth = CGFloat(0),
         isSearching = false
     
     override func awakeFromNib() {
@@ -27,6 +28,8 @@ class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
         
         tagsCollection.dataSource = self
         tagsCollection.delegate = self
+        
+        collectionViewWidth = tagsCollection.frame.size.width
     }
     
     override func didMoveToSuperview() {
@@ -68,7 +71,7 @@ class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reportsTagsCell", for: indexPath) as! ReportsTagsCollectionViewCell
         
-        if !blocked {
+        if !blocked { // Только для первого прохода
             
             cell.tagTitle.text = tags[indexPath.item].title
             cell.tagTitle.sizeToFit()
@@ -76,20 +79,10 @@ class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
             cell.layer.frame.size = cell.tagTitle.layer.frame.size
 
             tags[indexPath.item].size = cell.tagTitle.layer.frame.size
-
-            collectionWidth = collectionWidth + tags[indexPath.item].size.width + 15
-            
-            if indexPath.item == 0 {
-                collectionWidth = collectionWidth + 1
-            }
             
             if indexPath.item == tagsCount - 1 {
                 blocked = true
                 tagsCollection.reloadItems(at: [indexPath])
-            }
-            
-            if tagsCollection.layer.frame.size.width <= collectionWidth {
-                tags[indexPath.item].size = CGSize.zero
             }
         }
         
@@ -97,7 +90,14 @@ class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return tags[indexPath.item].size
+        
+        collectionWidth += tags[indexPath.item].size.width
+        
+        if collectionViewWidth >= collectionWidth {
+            return tags[indexPath.item].size
+        } else {
+            return CGSize.zero
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

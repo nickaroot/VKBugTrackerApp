@@ -138,10 +138,17 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             
             let responseString = String(data: data, encoding: .windowsCP1251)
+//            print(responseString)
             
-            let parsedMaxTimestamp = String(Int((responseString?.matchingStrings(regex: "[0-9]+$")[0][0])!)! - 1)
+            var maxTimestampParsed = ""
             
-            if (parsedMaxTimestamp != self.maxTimestampLast && query == "") || (parsedMaxTimestamp != self.searchingMaxTimestampLast && query != "") {
+            let maxTimestampRegexed = responseString?.matchingStrings(regex: "[0-9]+$")
+            
+            if maxTimestampRegexed!.count > 0 {
+                maxTimestampParsed = String(Int(maxTimestampRegexed![0][0])! - 1)
+            }
+            
+            if (maxTimestampParsed != self.maxTimestampLast && query == "") || (maxTimestampParsed != self.searchingMaxTimestampLast && query != "") {
                 
                 do {
                     
@@ -201,7 +208,7 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
                         if (query == "") { // Not searching
                             isSearching = false
                             
-                            self.maxTimestampLast = parsedMaxTimestamp
+                            self.maxTimestampLast = maxTimestampParsed
                             
                             reports.insert(contentsOf: loadedReports, at: 0)
                             
@@ -215,7 +222,7 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
                             
                             if (query == self.lastQuery) { // Same Search
                                 
-                                self.searchingMaxTimestampLast = parsedMaxTimestamp
+                                self.searchingMaxTimestampLast = maxTimestampParsed
                                 
                                 print(self.searchingMaxTimestampLast)
                                 

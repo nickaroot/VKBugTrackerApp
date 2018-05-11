@@ -12,7 +12,7 @@
 		C3044DAD1FF0B6A600FB1F74 /* AddReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3044DAA1FF0B6A500FB1F74 /* AddReportViewController.swift */; };
 		C30658B8209A338F00035541 /* ReportActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30658B6209A338F00035541 /* ReportActionsTableViewCell.swift */; };
 		C30658B9209A338F00035541 /* ReportActionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C30658B7209A338F00035541 /* ReportActionsTableViewCell.xib */; };
-		C3069C8C200570DE004B2053 /* VideoThumbnailParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069C8B200570DE004B2053 /* VideoThumbnailParser.swift */; };
+		C3069C8C200570DE004B2053 /* VideoThumbnailParserExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069C8B200570DE004B2053 /* VideoThumbnailParserExtension.swift */; };
 		C3069CF6200BDB02004B2053 /* StringMatchingStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069CF5200BDB02004B2053 /* StringMatchingStringExtension.swift */; };
 		C3069CF9200BEF51004B2053 /* ReportsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069CF7200BEF51004B2053 /* ReportsTableViewCell.swift */; };
 		C3069CFA200BEF51004B2053 /* ReportsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3069CF8200BEF51004B2053 /* ReportsTableViewCell.xib */; };
@@ -22,6 +22,7 @@
 		C3069D0420101298004B2053 /* RDPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069D0320101298004B2053 /* RDPicker.swift */; };
 		C3069D06201012BC004B2053 /* TextFieldPlaceholderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069D05201012BC004B2053 /* TextFieldPlaceholderExtension.swift */; };
 		C3096F2B205B550100384D8E /* ReportAttachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3096F2A205B550100384D8E /* ReportAttachments.swift */; };
+		C324FBAE209B284F00D9A668 /* AddReportAlternativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C324FBAD209B284F00D9A668 /* AddReportAlternativeViewController.swift */; };
 		C331B6901FF66FA900AD0984 /* SizeToFitHeightExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B68F1FF66FA900AD0984 /* SizeToFitHeightExtensions.swift */; };
 		C331B6921FF704A000AD0984 /* NavigationBarHideShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B6911FF704A000AD0984 /* NavigationBarHideShadowExtension.swift */; };
 		C331B6941FF722B900AD0984 /* ColorHexExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B6931FF722B900AD0984 /* ColorHexExtension.swift */; };
@@ -29,10 +30,15 @@
 		C3334BB42050BBBB004B1813 /* ReportAttachmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3334BB22050BBBB004B1813 /* ReportAttachmentsTableViewCell.swift */; };
 		C3334BB52050BBBB004B1813 /* ReportAttachmentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3334BB32050BBBB004B1813 /* ReportAttachmentsTableViewCell.xib */; };
 		C3380A84204F3D94003D6EAB /* ReportAlternativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3380A83204F3D94003D6EAB /* ReportAlternativeViewController.swift */; };
+		C33BC6AE209BBA1A0017E1B4 /* AddReportProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33BC6AC209BBA1A0017E1B4 /* AddReportProductTableViewCell.swift */; };
+		C33BC6AF209BBA1A0017E1B4 /* AddReportProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33BC6AD209BBA1A0017E1B4 /* AddReportProductTableViewCell.xib */; };
+		C33BC6B2209BBA390017E1B4 /* AddReportTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33BC6B0209BBA390017E1B4 /* AddReportTitleTableViewCell.swift */; };
+		C33BC6B3209BBA390017E1B4 /* AddReportTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33BC6B1209BBA390017E1B4 /* AddReportTitleTableViewCell.xib */; };
 		C346DD7A209A720800FB8971 /* CommentSendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346DD79209A720700FB8971 /* CommentSendButton.swift */; };
 		C346DD7C209A769B00FB8971 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346DD7B209A769A00FB8971 /* AvatarImageView.swift */; };
 		C346DD7E209A77CB00FB8971 /* ProductsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346DD7D209A77CB00FB8971 /* ProductsTableView.swift */; };
 		C346DD84209A798800FB8971 /* CommentTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346DD83209A798800FB8971 /* CommentTextField.swift */; };
+		C346DD86209B21C400FB8971 /* AddReportButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346DD85209B21C400FB8971 /* AddReportButton.swift */; };
 		C364A6EA2038C6580049DAD1 /* Kanna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C364A6E82038C6510049DAD1 /* Kanna.framework */; };
 		C364A6EB2038C6580049DAD1 /* Kanna.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C364A6E82038C6510049DAD1 /* Kanna.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C3688180200203430075A6E3 /* AttachmentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C368817E200203430075A6E3 /* AttachmentsCollectionViewCell.swift */; };
@@ -51,7 +57,7 @@
 		C3AB822C2054972400931FED /* ReportCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AB822A2054972400931FED /* ReportCommentTableViewCell.swift */; };
 		C3AB822D2054972400931FED /* ReportCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3AB822B2054972400931FED /* ReportCommentTableViewCell.xib */; };
 		C3AC5D431FFEA7C6005A9242 /* AttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC5D411FFEA7C6005A9242 /* AttachmentsViewController.swift */; };
-		C3AEEB47207948F900CE2438 /* LabelPaddingExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AEEB46207948F900CE2438 /* LabelPaddingExtension.swift */; };
+		C3AEEB47207948F900CE2438 /* LabelPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AEEB46207948F900CE2438 /* LabelPadding.swift */; };
 		C3AEEB492079541D00CE2438 /* StringFirstUppercasedExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AEEB482079541D00CE2438 /* StringFirstUppercasedExtension.swift */; };
 		C3BFD2471FFCDFBF002E44FA /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BFD2451FFCDFBF002E44FA /* ProductsTableViewCell.swift */; };
 		C3BFD2481FFCDFBF002E44FA /* ProductsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3BFD2461FFCDFBF002E44FA /* ProductsTableViewCell.xib */; };
@@ -112,7 +118,7 @@
 		C3044DAA1FF0B6A500FB1F74 /* AddReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportViewController.swift; sourceTree = "<group>"; };
 		C30658B6209A338F00035541 /* ReportActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportActionsTableViewCell.swift; sourceTree = "<group>"; };
 		C30658B7209A338F00035541 /* ReportActionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportActionsTableViewCell.xib; sourceTree = "<group>"; };
-		C3069C8B200570DE004B2053 /* VideoThumbnailParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailParser.swift; sourceTree = "<group>"; };
+		C3069C8B200570DE004B2053 /* VideoThumbnailParserExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailParserExtension.swift; sourceTree = "<group>"; };
 		C3069CF5200BDB02004B2053 /* StringMatchingStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringMatchingStringExtension.swift; sourceTree = "<group>"; };
 		C3069CF7200BEF51004B2053 /* ReportsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsTableViewCell.swift; sourceTree = "<group>"; };
 		C3069CF8200BEF51004B2053 /* ReportsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportsTableViewCell.xib; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 		C3069D0320101298004B2053 /* RDPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RDPicker.swift; sourceTree = "<group>"; };
 		C3069D05201012BC004B2053 /* TextFieldPlaceholderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPlaceholderExtension.swift; sourceTree = "<group>"; };
 		C3096F2A205B550100384D8E /* ReportAttachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAttachments.swift; sourceTree = "<group>"; };
+		C324FBAD209B284F00D9A668 /* AddReportAlternativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportAlternativeViewController.swift; sourceTree = "<group>"; };
 		C331B68F1FF66FA900AD0984 /* SizeToFitHeightExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeToFitHeightExtensions.swift; sourceTree = "<group>"; };
 		C331B6911FF704A000AD0984 /* NavigationBarHideShadowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarHideShadowExtension.swift; sourceTree = "<group>"; };
 		C331B6931FF722B900AD0984 /* ColorHexExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexExtension.swift; sourceTree = "<group>"; };
@@ -129,10 +136,15 @@
 		C3334BB22050BBBB004B1813 /* ReportAttachmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAttachmentsTableViewCell.swift; sourceTree = "<group>"; };
 		C3334BB32050BBBB004B1813 /* ReportAttachmentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportAttachmentsTableViewCell.xib; sourceTree = "<group>"; };
 		C3380A83204F3D94003D6EAB /* ReportAlternativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAlternativeViewController.swift; sourceTree = "<group>"; };
+		C33BC6AC209BBA1A0017E1B4 /* AddReportProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportProductTableViewCell.swift; sourceTree = "<group>"; };
+		C33BC6AD209BBA1A0017E1B4 /* AddReportProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddReportProductTableViewCell.xib; sourceTree = "<group>"; };
+		C33BC6B0209BBA390017E1B4 /* AddReportTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportTitleTableViewCell.swift; sourceTree = "<group>"; };
+		C33BC6B1209BBA390017E1B4 /* AddReportTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddReportTitleTableViewCell.xib; sourceTree = "<group>"; };
 		C346DD79209A720700FB8971 /* CommentSendButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSendButton.swift; sourceTree = "<group>"; };
 		C346DD7B209A769A00FB8971 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		C346DD7D209A77CB00FB8971 /* ProductsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableView.swift; sourceTree = "<group>"; };
 		C346DD83209A798800FB8971 /* CommentTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTextField.swift; sourceTree = "<group>"; };
+		C346DD85209B21C400FB8971 /* AddReportButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportButton.swift; sourceTree = "<group>"; };
 		C364A6E82038C6510049DAD1 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Kanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C368817E200203430075A6E3 /* AttachmentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		C368817F200203430075A6E3 /* AttachmentsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttachmentsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -151,7 +163,7 @@
 		C3AB822A2054972400931FED /* ReportCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCommentTableViewCell.swift; sourceTree = "<group>"; };
 		C3AB822B2054972400931FED /* ReportCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportCommentTableViewCell.xib; sourceTree = "<group>"; };
 		C3AC5D411FFEA7C6005A9242 /* AttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsViewController.swift; sourceTree = "<group>"; };
-		C3AEEB46207948F900CE2438 /* LabelPaddingExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPaddingExtension.swift; sourceTree = "<group>"; };
+		C3AEEB46207948F900CE2438 /* LabelPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPadding.swift; sourceTree = "<group>"; };
 		C3AEEB482079541D00CE2438 /* StringFirstUppercasedExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFirstUppercasedExtension.swift; sourceTree = "<group>"; };
 		C3BFD2451FFCDFBF002E44FA /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 		C3BFD2461FFCDFBF002E44FA /* ProductsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsTableViewCell.xib; sourceTree = "<group>"; };
@@ -208,6 +220,125 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C33123E220A64D4D00C1DE38 /* Single */ = {
+			isa = PBXGroup;
+			children = (
+				C3CEBFB6206A92EE0002D322 /* EditCommentViewController.swift */,
+				C36C1A921FF08A9200DD4631 /* ReportViewController.swift */,
+				C3859863207AF66900AF2CD6 /* ReportInfoTableViewCell.swift */,
+				C3859864207AF66900AF2CD6 /* ReportInfoTableViewCell.xib */,
+				C30658B6209A338F00035541 /* ReportActionsTableViewCell.swift */,
+				C30658B7209A338F00035541 /* ReportActionsTableViewCell.xib */,
+				C3859867207B005100AF2CD6 /* ReportInfo.swift */,
+				C3859869207B0A4300AF2CD6 /* ReportInfoCollectionViewCell.swift */,
+				C385986A207B0A4300AF2CD6 /* ReportInfoCollectionViewCell.xib */,
+				C346DD79209A720700FB8971 /* CommentSendButton.swift */,
+				C346DD83209A798800FB8971 /* CommentTextField.swift */,
+				C3380A83204F3D94003D6EAB /* ReportAlternativeViewController.swift */,
+				C3096F2A205B550100384D8E /* ReportAttachments.swift */,
+				C3D696EB20508E7700C5BF01 /* ReportAttachmentsCollectionViewCell.swift */,
+				C3D696EC20508E7700C5BF01 /* ReportAttachmentsCollectionViewCell.xib */,
+				C3334BB22050BBBB004B1813 /* ReportAttachmentsTableViewCell.swift */,
+				C3334BB32050BBBB004B1813 /* ReportAttachmentsTableViewCell.xib */,
+				C3D1D85F205BE4FE001AD9A3 /* ReportComments.swift */,
+				C3AB822A2054972400931FED /* ReportCommentTableViewCell.swift */,
+				C3AB822B2054972400931FED /* ReportCommentTableViewCell.xib */,
+				C3D696E72050821E00C5BF01 /* ReportContentTableViewCell.swift */,
+				C3D696E82050821E00C5BF01 /* ReportContentTableViewCell.xib */,
+			);
+			name = Single;
+			sourceTree = "<group>";
+		};
+		C33123E420A64DB600C1DE38 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				C3AC5D411FFEA7C6005A9242 /* AttachmentsViewController.swift */,
+				C37CA6F61FF8860E00EDA83E /* TagsTableViewCell.swift */,
+				C37CA6FA1FF887C500EDA83E /* TagsTableViewCell.xib */,
+				C33BC6AC209BBA1A0017E1B4 /* AddReportProductTableViewCell.swift */,
+				C33BC6AD209BBA1A0017E1B4 /* AddReportProductTableViewCell.xib */,
+				C33BC6B0209BBA390017E1B4 /* AddReportTitleTableViewCell.swift */,
+				C33BC6B1209BBA390017E1B4 /* AddReportTitleTableViewCell.xib */,
+				C3044DAA1FF0B6A500FB1F74 /* AddReportViewController.swift */,
+				C324FBAD209B284F00D9A668 /* AddReportAlternativeViewController.swift */,
+				C368818420036BA50075A6E3 /* Attachments.swift */,
+				C368817E200203430075A6E3 /* AttachmentsCollectionViewCell.swift */,
+				C368817F200203430075A6E3 /* AttachmentsCollectionViewCell.xib */,
+				C346DD85209B21C400FB8971 /* AddReportButton.swift */,
+			);
+			name = Add;
+			sourceTree = "<group>";
+		};
+		C33123E520A64E1100C1DE38 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				C3069CF7200BEF51004B2053 /* ReportsTableViewCell.swift */,
+				C3069CF8200BEF51004B2053 /* ReportsTableViewCell.xib */,
+				C3069CFB200BF907004B2053 /* ReportsTagsCollectionViewCell.swift */,
+				C3069CFC200BF907004B2053 /* ReportsTagsCollectionViewCell.xib */,
+				C3D2319F1FF00675008C66FC /* ReportsViewController.swift */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		C33123E620A64E7900C1DE38 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C3D231A11FF00675008C66FC /* ProfileViewController.swift */,
+				C3BFD2451FFCDFBF002E44FA /* ProductsTableViewCell.swift */,
+				C3BFD2461FFCDFBF002E44FA /* ProductsTableViewCell.xib */,
+				C346DD7D209A77CB00FB8971 /* ProductsTableView.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		C33123E720A64E9100C1DE38 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				C3069CFF200C1768004B2053 /* Reports.swift */,
+				C33123E520A64E1100C1DE38 /* List */,
+				C33123E420A64DB600C1DE38 /* Add */,
+				C33123E220A64D4D00C1DE38 /* Single */,
+			);
+			name = Reports;
+			sourceTree = "<group>";
+		};
+		C33123E820A64EDE00C1DE38 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C3069C8B200570DE004B2053 /* VideoThumbnailParserExtension.swift */,
+				C331B6931FF722B900AD0984 /* ColorHexExtension.swift */,
+				C300B526202133E80032FEBB /* StringHtmlEncodedExtension.swift */,
+				C331B6911FF704A000AD0984 /* NavigationBarHideShadowExtension.swift */,
+				C3069D05201012BC004B2053 /* TextFieldPlaceholderExtension.swift */,
+				C3069CF5200BDB02004B2053 /* StringMatchingStringExtension.swift */,
+				C3AEEB482079541D00CE2438 /* StringFirstUppercasedExtension.swift */,
+				C331B68F1FF66FA900AD0984 /* SizeToFitHeightExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		C33123E920A64F4C00C1DE38 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				C3D2319D1FF00675008C66FC /* AppDelegate.swift */,
+				C3EF9DCF1FFEC8220001AD15 /* VKDelegate.swift */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		C33123EA20A64FC600C1DE38 /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				C346DD7B209A769A00FB8971 /* AvatarImageView.swift */,
+				C3069D0320101298004B2053 /* RDPicker.swift */,
+				C3AEEB46207948F900CE2438 /* LabelPadding.swift */,
+				C38AD5132061D317001BBC9F /* SearchTextField.swift */,
+				C331B6991FF76D8400AD0984 /* TextFieldWithPadding.swift */,
+			);
+			name = Customs;
+			sourceTree = "<group>";
+		};
 		C3D231911FF00675008C66FC = {
 			isa = PBXGroup;
 			children = (
@@ -232,66 +363,17 @@
 		C3D2319C1FF00675008C66FC /* VKBugTrackerApp */ = {
 			isa = PBXGroup;
 			children = (
-				C346DD83209A798800FB8971 /* CommentTextField.swift */,
-				C346DD7D209A77CB00FB8971 /* ProductsTableView.swift */,
-				C346DD79209A720700FB8971 /* CommentSendButton.swift */,
-				C346DD7B209A769A00FB8971 /* AvatarImageView.swift */,
-				C3044DAA1FF0B6A500FB1F74 /* AddReportViewController.swift */,
+				C33123EA20A64FC600C1DE38 /* Customs */,
+				C33123E920A64F4C00C1DE38 /* Delegates */,
+				C33123E820A64EDE00C1DE38 /* Extensions */,
+				C33123E720A64E9100C1DE38 /* Reports */,
+				C33123E620A64E7900C1DE38 /* Profile */,
 				C3EF9DD31FFECCFE0001AD15 /* APIWorker.swift */,
-				C3D2319D1FF00675008C66FC /* AppDelegate.swift */,
-				C368818420036BA50075A6E3 /* Attachments.swift */,
-				C368817E200203430075A6E3 /* AttachmentsCollectionViewCell.swift */,
-				C368817F200203430075A6E3 /* AttachmentsCollectionViewCell.xib */,
-				C3AC5D411FFEA7C6005A9242 /* AttachmentsViewController.swift */,
 				C3D231CD1FF006CF008C66FC /* AuthViewController.swift */,
-				C3CEBFB6206A92EE0002D322 /* EditCommentViewController.swift */,
-				C331B6931FF722B900AD0984 /* ColorHexExtension.swift */,
-				C300B526202133E80032FEBB /* StringHtmlEncodedExtension.swift */,
 				C3D231AB1FF00675008C66FC /* Info.plist */,
 				C37CA6F41FF7EE5C00EDA83E /* LaunchScreen.storyboard */,
 				C3D231A31FF00675008C66FC /* Main.storyboard */,
 				C300B524202121CC0032FEBB /* Media.xcassets */,
-				C331B6911FF704A000AD0984 /* NavigationBarHideShadowExtension.swift */,
-				C3069D05201012BC004B2053 /* TextFieldPlaceholderExtension.swift */,
-				C3BFD2451FFCDFBF002E44FA /* ProductsTableViewCell.swift */,
-				C3BFD2461FFCDFBF002E44FA /* ProductsTableViewCell.xib */,
-				C3D231A11FF00675008C66FC /* ProfileViewController.swift */,
-				C3069D0320101298004B2053 /* RDPicker.swift */,
-				C3069CF5200BDB02004B2053 /* StringMatchingStringExtension.swift */,
-				C3380A83204F3D94003D6EAB /* ReportAlternativeViewController.swift */,
-				C3096F2A205B550100384D8E /* ReportAttachments.swift */,
-				C3D696EB20508E7700C5BF01 /* ReportAttachmentsCollectionViewCell.swift */,
-				C3D696EC20508E7700C5BF01 /* ReportAttachmentsCollectionViewCell.xib */,
-				C3334BB22050BBBB004B1813 /* ReportAttachmentsTableViewCell.swift */,
-				C3334BB32050BBBB004B1813 /* ReportAttachmentsTableViewCell.xib */,
-				C3D1D85F205BE4FE001AD9A3 /* ReportComments.swift */,
-				C3AB822A2054972400931FED /* ReportCommentTableViewCell.swift */,
-				C3AB822B2054972400931FED /* ReportCommentTableViewCell.xib */,
-				C3D696E72050821E00C5BF01 /* ReportContentTableViewCell.swift */,
-				C3D696E82050821E00C5BF01 /* ReportContentTableViewCell.xib */,
-				C3069CFF200C1768004B2053 /* Reports.swift */,
-				C3069CF7200BEF51004B2053 /* ReportsTableViewCell.swift */,
-				C3AEEB482079541D00CE2438 /* StringFirstUppercasedExtension.swift */,
-				C3069CF8200BEF51004B2053 /* ReportsTableViewCell.xib */,
-				C3AEEB46207948F900CE2438 /* LabelPaddingExtension.swift */,
-				C3069CFB200BF907004B2053 /* ReportsTagsCollectionViewCell.swift */,
-				C3069CFC200BF907004B2053 /* ReportsTagsCollectionViewCell.xib */,
-				C3D2319F1FF00675008C66FC /* ReportsViewController.swift */,
-				C36C1A921FF08A9200DD4631 /* ReportViewController.swift */,
-				C38AD5132061D317001BBC9F /* SearchTextField.swift */,
-				C331B68F1FF66FA900AD0984 /* SizeToFitHeightExtensions.swift */,
-				C37CA6F61FF8860E00EDA83E /* TagsTableViewCell.swift */,
-				C37CA6FA1FF887C500EDA83E /* TagsTableViewCell.xib */,
-				C331B6991FF76D8400AD0984 /* TextFieldWithPadding.swift */,
-				C3069C8B200570DE004B2053 /* VideoThumbnailParser.swift */,
-				C3EF9DCF1FFEC8220001AD15 /* VKDelegate.swift */,
-				C3859863207AF66900AF2CD6 /* ReportInfoTableViewCell.swift */,
-				C3859864207AF66900AF2CD6 /* ReportInfoTableViewCell.xib */,
-				C30658B6209A338F00035541 /* ReportActionsTableViewCell.swift */,
-				C30658B7209A338F00035541 /* ReportActionsTableViewCell.xib */,
-				C3859867207B005100AF2CD6 /* ReportInfo.swift */,
-				C3859869207B0A4300AF2CD6 /* ReportInfoCollectionViewCell.swift */,
-				C385986A207B0A4300AF2CD6 /* ReportInfoCollectionViewCell.xib */,
 			);
 			path = VKBugTrackerApp;
 			sourceTree = "<group>";
@@ -438,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3334BB52050BBBB004B1813 /* ReportAttachmentsTableViewCell.xib in Resources */,
+				C33BC6AF209BBA1A0017E1B4 /* AddReportProductTableViewCell.xib in Resources */,
 				C3AB822D2054972400931FED /* ReportCommentTableViewCell.xib in Resources */,
 				C30658B9209A338F00035541 /* ReportActionsTableViewCell.xib in Resources */,
 				C385986C207B0A4300AF2CD6 /* ReportInfoCollectionViewCell.xib in Resources */,
@@ -450,6 +533,7 @@
 				C3859866207AF66900AF2CD6 /* ReportInfoTableViewCell.xib in Resources */,
 				C3BFD2481FFCDFBF002E44FA /* ProductsTableViewCell.xib in Resources */,
 				C3069CFE200BF907004B2053 /* ReportsTagsCollectionViewCell.xib in Resources */,
+				C33BC6B3209BBA390017E1B4 /* AddReportTitleTableViewCell.xib in Resources */,
 				C3D231A51FF00675008C66FC /* Main.storyboard in Resources */,
 				C3D696EA2050821E00C5BF01 /* ReportContentTableViewCell.xib in Resources */,
 			);
@@ -478,10 +562,11 @@
 			files = (
 				C3AC5D431FFEA7C6005A9242 /* AttachmentsViewController.swift in Sources */,
 				C3688180200203430075A6E3 /* AttachmentsCollectionViewCell.swift in Sources */,
+				C33BC6B2209BBA390017E1B4 /* AddReportTitleTableViewCell.swift in Sources */,
 				C3D231CE1FF006CF008C66FC /* AuthViewController.swift in Sources */,
 				C3D1D860205BE4FE001AD9A3 /* ReportComments.swift in Sources */,
 				C3AEEB492079541D00CE2438 /* StringFirstUppercasedExtension.swift in Sources */,
-				C3069C8C200570DE004B2053 /* VideoThumbnailParser.swift in Sources */,
+				C3069C8C200570DE004B2053 /* VideoThumbnailParserExtension.swift in Sources */,
 				C346DD7C209A769B00FB8971 /* AvatarImageView.swift in Sources */,
 				C331B69A1FF76D8400AD0984 /* TextFieldWithPadding.swift in Sources */,
 				C3069D0420101298004B2053 /* RDPicker.swift in Sources */,
@@ -496,7 +581,8 @@
 				C3096F2B205B550100384D8E /* ReportAttachments.swift in Sources */,
 				C3D696E92050821E00C5BF01 /* ReportContentTableViewCell.swift in Sources */,
 				C3380A84204F3D94003D6EAB /* ReportAlternativeViewController.swift in Sources */,
-				C3AEEB47207948F900CE2438 /* LabelPaddingExtension.swift in Sources */,
+				C346DD86209B21C400FB8971 /* AddReportButton.swift in Sources */,
+				C3AEEB47207948F900CE2438 /* LabelPadding.swift in Sources */,
 				C3D231A21FF00675008C66FC /* ProfileViewController.swift in Sources */,
 				C3EF9DD01FFEC8220001AD15 /* VKDelegate.swift in Sources */,
 				C331B6921FF704A000AD0984 /* NavigationBarHideShadowExtension.swift in Sources */,
@@ -508,9 +594,11 @@
 				C36C1A931FF08A9200DD4631 /* ReportViewController.swift in Sources */,
 				C300B527202133E80032FEBB /* StringHtmlEncodedExtension.swift in Sources */,
 				C3D231A01FF00675008C66FC /* ReportsViewController.swift in Sources */,
+				C33BC6AE209BBA1A0017E1B4 /* AddReportProductTableViewCell.swift in Sources */,
 				C3069CF6200BDB02004B2053 /* StringMatchingStringExtension.swift in Sources */,
 				C3D696ED20508E7700C5BF01 /* ReportAttachmentsCollectionViewCell.swift in Sources */,
 				C3334BB42050BBBB004B1813 /* ReportAttachmentsTableViewCell.swift in Sources */,
+				C324FBAE209B284F00D9A668 /* AddReportAlternativeViewController.swift in Sources */,
 				C37CA6F71FF8860E00EDA83E /* TagsTableViewCell.swift in Sources */,
 				C3859865207AF66900AF2CD6 /* ReportInfoTableViewCell.swift in Sources */,
 				C346DD84209A798800FB8971 /* CommentTextField.swift in Sources */,

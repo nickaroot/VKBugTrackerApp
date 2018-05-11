@@ -61,6 +61,7 @@
                             <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
                                 <real key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </label>
                     <collectionView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xqa-U4-nhd">

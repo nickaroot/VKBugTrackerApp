@@ -425,6 +425,56 @@
             </objects>
             <point key="canvasLocation" x="2989.8550724637685" y="-1004.3478260869566"/>
         </scene>
+        <!--Add Report Alternative View Controller-->
+        <scene sceneID="chB-Xn-rE6">
+            <objects>
+                <viewController id="UKG-Fc-IDM" customClass="AddReportAlternativeViewController" customModule="VKBugTrackerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HRZ-SU-QGv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1tZ-JC-nTO">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="531"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="UKG-Fc-IDM" id="dAV-zS-XLa"/>
+                                    <outlet property="delegate" destination="UKG-Fc-IDM" id="ZD3-Tv-Bbc"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQ4-f6-uew" customClass="AddReportButton" customModule="VKBugTrackerApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="551" width="374" height="52"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.56470588239999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="8G5-51-yno"/>
+                                </constraints>
+                                <state key="normal" title="Добавить">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lIY-aX-fHS" firstAttribute="trailing" secondItem="iQ4-f6-uew" secondAttribute="trailing" constant="20" id="9Qh-Oz-wyw"/>
+                            <constraint firstItem="lIY-aX-fHS" firstAttribute="bottom" secondItem="iQ4-f6-uew" secondAttribute="bottom" constant="20" id="Hgb-Ut-snN"/>
+                            <constraint firstItem="iQ4-f6-uew" firstAttribute="leading" secondItem="lIY-aX-fHS" secondAttribute="leading" constant="20" id="clc-sT-Xjk"/>
+                            <constraint firstItem="1tZ-JC-nTO" firstAttribute="leading" secondItem="lIY-aX-fHS" secondAttribute="leading" id="eFf-ei-B1n"/>
+                            <constraint firstItem="1tZ-JC-nTO" firstAttribute="trailing" secondItem="lIY-aX-fHS" secondAttribute="trailing" id="hYi-sZ-opM"/>
+                            <constraint firstItem="1tZ-JC-nTO" firstAttribute="top" secondItem="lIY-aX-fHS" secondAttribute="top" id="ili-Iu-7Nh"/>
+                            <constraint firstItem="iQ4-f6-uew" firstAttribute="top" secondItem="1tZ-JC-nTO" secondAttribute="bottom" constant="20" id="xyd-ob-SXh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lIY-aX-fHS"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="mostViewed" id="ZcM-3C-o5P"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7SN-3P-3rb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2237.68115942029" y="-1705.4347826086957"/>
+        </scene>
         <!--Edit Comment View Controller-->
         <scene sceneID="ids-HZ-XSc">
             <objects>
@@ -589,6 +639,7 @@
                         <outlet property="tableView" destination="gVv-Lh-xRG" id="aEl-rF-YAt"/>
                         <segue destination="4jt-ml-y5B" kind="show" identifier="showAddReport" id="0v5-N0-ODH"/>
                         <segue destination="vY9-QS-Bsu" kind="show" identifier="showSelectedReportAlt" id="ETC-dy-OpQ"/>
+                        <segue destination="UKG-Fc-IDM" kind="show" id="8hI-Ec-coY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -603,7 +654,7 @@
             </objects>
             <point key="canvasLocation" x="1506" y="-322"/>
         </scene>
-        <!--Report Alternative View Controller-->
+        <!--Отчет-->
         <scene sceneID="pZ1-Jm-sZ6">
             <objects>
                 <viewController id="vY9-QS-Bsu" customClass="ReportAlternativeViewController" customModule="VKBugTrackerApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -695,7 +746,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0zQ-Aq-vSY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jV0-Np-Y29">
+                    <navigationItem key="navigationItem" title="Отчет" id="jV0-Np-Y29">
                         <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="6oN-q7-ccz">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5Ha-CI-oT3">
                                 <rect key="frame" x="370" y="11" width="24" height="22"/>
@@ -708,6 +759,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="commentTextField" destination="G7H-Oz-8CW" id="7BG-nP-Hg3"/>
                         <outlet property="commentView" destination="3et-gw-eGN" id="16r-f8-BnS"/>
                         <outlet property="sendButton" destination="TSY-pQ-dW7" id="Kik-OY-xBd"/>
                         <outlet property="tableView" destination="CCm-fV-NAY" id="lW6-JS-akX"/>
@@ -782,7 +834,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Kl1DMzwBqQo" translatesAutoresizingMaskIntoConstraints="NO" id="gZb-rg-XU6" customClass="AvatarImageView" customModule="VKBugTrackerApp" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gZb-rg-XU6" customClass="AvatarImageView" customModule="VKBugTrackerApp" customModuleProvider="target">
                                 <rect key="frame" x="132" y="40" width="150" height="150"/>
                                 <color key="backgroundColor" red="0.92155379056930542" green="0.9215739369392395" blue="0.92156821489334106" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -879,7 +931,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.36078431370000003" green="0.49803921569999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="TR7-Ey-ayS" firstAttribute="centerX" secondItem="a7N-a3-8f1" secondAttribute="centerX" id="9CH-ze-slE"/>
                             <constraint firstItem="bTG-pY-4zA" firstAttribute="bottom" secondItem="cVA-68-yGT" secondAttribute="bottom" id="Ajv-1I-Sor"/>
@@ -931,7 +983,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Kl1DMzwBqQo" width="100" height="100"/>
         <image name="VKTesters-cover" width="1280" height="800"/>
         <image name="attach" width="20" height="20"/>
         <image name="compose" width="24" height="24"/>
