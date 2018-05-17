@@ -100,11 +100,26 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
                 let name = doc.at_css(".mem_link")?.text!
                 let stat = String(describing: (doc.at_css(".bt_reporter_content_block")?.text!)!.split(separator: " ")[0])
-                //                let counter = String(describing: (doc.at_css(".bt_reporter_content_block a")?.text!)!.split(separator: " ")[0])
-                let avatar = doc.at_css(".bt_reporter_icon_img")!["src"]
-                
-                self.navigationItem.title = name
                 self.statLabel.text = stat
+                self.productsTableView.isHidden = true
+                if stat == "Исключён" {
+                    self.overallLabel.text = "из программы."
+                } else if stat == "Не" {
+                    self.statLabel.text = self.statLabel.text! + " участвует"
+                    self.overallLabel.text = "в программе."
+                } else if stat == "Подал" {
+                    self.statLabel.text = self.statLabel.text! + " заявку"
+                    self.overallLabel.text = "на вступление в программу."
+                } else {
+                    self.overallLabel.text = "в общем рейтинге"
+                    self.productsTableView.isHidden = false
+                }
+                //                let counter = String(describing: (doc.at_css(".bt_reporter_content_block a")?.text!)!.split(separator: " ")[0])
+                var avatar = doc.at_css(".bt_reporter_icon_img")!["src"]
+                if (avatar != nil && avatar == "/images/camera_200.png") {
+                    avatar = "https://vk.com\(avatar!)"
+                }
+                self.navigationItem.title = name
                 self.avatarImageView.image = UIImage(data: try! Data(contentsOf: URL(string: avatar!)!))
                 
             } catch {

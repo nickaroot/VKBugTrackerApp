@@ -518,8 +518,10 @@ class ReportAlternativeViewController: UIViewController, UITextViewDelegate, UIT
                     reportEditHash = (removeBtn!["onclick"]!).matchingStrings(regex: "(?<=').*(?=')")[0][0]
                 }
                 
-                if (doc.at_css(".bt_report_one_fav")?.className?.contains("bt_report_fav_checked"))! {
-                    self.bookmark = true
+                if doc.at_css(".bt_report_one_fav") != nil {
+                    if (doc.at_css(".bt_report_one_fav")?.className?.contains("bt_report_fav_checked"))! {
+                        self.bookmark = true
+                    }
                 }
                 
                 for crumb in doc.css(".ui_crumb") {
