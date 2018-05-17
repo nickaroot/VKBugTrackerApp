@@ -34,6 +34,7 @@
 		C33BC6AF209BBA1A0017E1B4 /* AddReportProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33BC6AD209BBA1A0017E1B4 /* AddReportProductTableViewCell.xib */; };
 		C33BC6B2209BBA390017E1B4 /* AddReportTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33BC6B0209BBA390017E1B4 /* AddReportTitleTableViewCell.swift */; };
 		C33BC6B3209BBA390017E1B4 /* AddReportTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33BC6B1209BBA390017E1B4 /* AddReportTitleTableViewCell.xib */; };
+		C33CCF8920A69EEF008F97CF /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33CCF8820A69EEF008F97CF /* Products.swift */; };
 		C346DD7A209A720800FB8971 /* CommentSendButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346DD79209A720700FB8971 /* CommentSendButton.swift */; };
 		C346DD7C209A769B00FB8971 /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346DD7B209A769A00FB8971 /* AvatarImageView.swift */; };
 		C346DD7E209A77CB00FB8971 /* ProductsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C346DD7D209A77CB00FB8971 /* ProductsTableView.swift */; };
@@ -48,11 +49,6 @@
 		C37CA6F51FF7EE5C00EDA83E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37CA6F41FF7EE5C00EDA83E /* LaunchScreen.storyboard */; };
 		C37CA6F71FF8860E00EDA83E /* TagsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37CA6F61FF8860E00EDA83E /* TagsTableViewCell.swift */; };
 		C37CA6FB1FF887C500EDA83E /* TagsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C37CA6FA1FF887C500EDA83E /* TagsTableViewCell.xib */; };
-		C3859865207AF66900AF2CD6 /* ReportInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3859863207AF66900AF2CD6 /* ReportInfoTableViewCell.swift */; };
-		C3859866207AF66900AF2CD6 /* ReportInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3859864207AF66900AF2CD6 /* ReportInfoTableViewCell.xib */; };
-		C3859868207B005100AF2CD6 /* ReportInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3859867207B005100AF2CD6 /* ReportInfo.swift */; };
-		C385986B207B0A4300AF2CD6 /* ReportInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3859869207B0A4300AF2CD6 /* ReportInfoCollectionViewCell.swift */; };
-		C385986C207B0A4300AF2CD6 /* ReportInfoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C385986A207B0A4300AF2CD6 /* ReportInfoCollectionViewCell.xib */; };
 		C38AD5142061D317001BBC9F /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38AD5132061D317001BBC9F /* SearchTextField.swift */; };
 		C3AB822C2054972400931FED /* ReportCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AB822A2054972400931FED /* ReportCommentTableViewCell.swift */; };
 		C3AB822D2054972400931FED /* ReportCommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3AB822B2054972400931FED /* ReportCommentTableViewCell.xib */; };
@@ -140,6 +136,7 @@
 		C33BC6AD209BBA1A0017E1B4 /* AddReportProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddReportProductTableViewCell.xib; sourceTree = "<group>"; };
 		C33BC6B0209BBA390017E1B4 /* AddReportTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportTitleTableViewCell.swift; sourceTree = "<group>"; };
 		C33BC6B1209BBA390017E1B4 /* AddReportTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddReportTitleTableViewCell.xib; sourceTree = "<group>"; };
+		C33CCF8820A69EEF008F97CF /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		C346DD79209A720700FB8971 /* CommentSendButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentSendButton.swift; sourceTree = "<group>"; };
 		C346DD7B209A769A00FB8971 /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		C346DD7D209A77CB00FB8971 /* ProductsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableView.swift; sourceTree = "<group>"; };
@@ -154,11 +151,6 @@
 		C37CA6F41FF7EE5C00EDA83E /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C37CA6F61FF8860E00EDA83E /* TagsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTableViewCell.swift; sourceTree = "<group>"; };
 		C37CA6FA1FF887C500EDA83E /* TagsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagsTableViewCell.xib; sourceTree = "<group>"; };
-		C3859863207AF66900AF2CD6 /* ReportInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportInfoTableViewCell.swift; sourceTree = "<group>"; };
-		C3859864207AF66900AF2CD6 /* ReportInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportInfoTableViewCell.xib; sourceTree = "<group>"; };
-		C3859867207B005100AF2CD6 /* ReportInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportInfo.swift; sourceTree = "<group>"; };
-		C3859869207B0A4300AF2CD6 /* ReportInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportInfoCollectionViewCell.swift; sourceTree = "<group>"; };
-		C385986A207B0A4300AF2CD6 /* ReportInfoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportInfoCollectionViewCell.xib; sourceTree = "<group>"; };
 		C38AD5132061D317001BBC9F /* SearchTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		C3AB822A2054972400931FED /* ReportCommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCommentTableViewCell.swift; sourceTree = "<group>"; };
 		C3AB822B2054972400931FED /* ReportCommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportCommentTableViewCell.xib; sourceTree = "<group>"; };
@@ -225,13 +217,8 @@
 			children = (
 				C3CEBFB6206A92EE0002D322 /* EditCommentViewController.swift */,
 				C36C1A921FF08A9200DD4631 /* ReportViewController.swift */,
-				C3859863207AF66900AF2CD6 /* ReportInfoTableViewCell.swift */,
-				C3859864207AF66900AF2CD6 /* ReportInfoTableViewCell.xib */,
 				C30658B6209A338F00035541 /* ReportActionsTableViewCell.swift */,
 				C30658B7209A338F00035541 /* ReportActionsTableViewCell.xib */,
-				C3859867207B005100AF2CD6 /* ReportInfo.swift */,
-				C3859869207B0A4300AF2CD6 /* ReportInfoCollectionViewCell.swift */,
-				C385986A207B0A4300AF2CD6 /* ReportInfoCollectionViewCell.xib */,
 				C346DD79209A720700FB8971 /* CommentSendButton.swift */,
 				C346DD83209A798800FB8971 /* CommentTextField.swift */,
 				C3380A83204F3D94003D6EAB /* ReportAlternativeViewController.swift */,
@@ -374,6 +361,7 @@
 				C37CA6F41FF7EE5C00EDA83E /* LaunchScreen.storyboard */,
 				C3D231A31FF00675008C66FC /* Main.storyboard */,
 				C300B524202121CC0032FEBB /* Media.xcassets */,
+				C33CCF8820A69EEF008F97CF /* Products.swift */,
 			);
 			path = VKBugTrackerApp;
 			sourceTree = "<group>";
@@ -523,14 +511,12 @@
 				C33BC6AF209BBA1A0017E1B4 /* AddReportProductTableViewCell.xib in Resources */,
 				C3AB822D2054972400931FED /* ReportCommentTableViewCell.xib in Resources */,
 				C30658B9209A338F00035541 /* ReportActionsTableViewCell.xib in Resources */,
-				C385986C207B0A4300AF2CD6 /* ReportInfoCollectionViewCell.xib in Resources */,
 				C3069CFA200BEF51004B2053 /* ReportsTableViewCell.xib in Resources */,
 				C3688181200203430075A6E3 /* AttachmentsCollectionViewCell.xib in Resources */,
 				C3D696EE20508E7700C5BF01 /* ReportAttachmentsCollectionViewCell.xib in Resources */,
 				C300B525202121CC0032FEBB /* Media.xcassets in Resources */,
 				C37CA6FB1FF887C500EDA83E /* TagsTableViewCell.xib in Resources */,
 				C37CA6F51FF7EE5C00EDA83E /* LaunchScreen.storyboard in Resources */,
-				C3859866207AF66900AF2CD6 /* ReportInfoTableViewCell.xib in Resources */,
 				C3BFD2481FFCDFBF002E44FA /* ProductsTableViewCell.xib in Resources */,
 				C3069CFE200BF907004B2053 /* ReportsTagsCollectionViewCell.xib in Resources */,
 				C33BC6B3209BBA390017E1B4 /* AddReportTitleTableViewCell.xib in Resources */,
@@ -575,7 +561,6 @@
 				C346DD7A209A720800FB8971 /* CommentSendButton.swift in Sources */,
 				C3CEBFB7206A92EE0002D322 /* EditCommentViewController.swift in Sources */,
 				C3069CFD200BF907004B2053 /* ReportsTagsCollectionViewCell.swift in Sources */,
-				C385986B207B0A4300AF2CD6 /* ReportInfoCollectionViewCell.swift in Sources */,
 				C331B6901FF66FA900AD0984 /* SizeToFitHeightExtensions.swift in Sources */,
 				C38AD5142061D317001BBC9F /* SearchTextField.swift in Sources */,
 				C3096F2B205B550100384D8E /* ReportAttachments.swift in Sources */,
@@ -586,7 +571,6 @@
 				C3D231A21FF00675008C66FC /* ProfileViewController.swift in Sources */,
 				C3EF9DD01FFEC8220001AD15 /* VKDelegate.swift in Sources */,
 				C331B6921FF704A000AD0984 /* NavigationBarHideShadowExtension.swift in Sources */,
-				C3859868207B005100AF2CD6 /* ReportInfo.swift in Sources */,
 				C368818520036BA50075A6E3 /* Attachments.swift in Sources */,
 				C3BFD2471FFCDFBF002E44FA /* ProductsTableViewCell.swift in Sources */,
 				C3AB822C2054972400931FED /* ReportCommentTableViewCell.swift in Sources */,
@@ -600,12 +584,12 @@
 				C3334BB42050BBBB004B1813 /* ReportAttachmentsTableViewCell.swift in Sources */,
 				C324FBAE209B284F00D9A668 /* AddReportAlternativeViewController.swift in Sources */,
 				C37CA6F71FF8860E00EDA83E /* TagsTableViewCell.swift in Sources */,
-				C3859865207AF66900AF2CD6 /* ReportInfoTableViewCell.swift in Sources */,
 				C346DD84209A798800FB8971 /* CommentTextField.swift in Sources */,
 				C3069D06201012BC004B2053 /* TextFieldPlaceholderExtension.swift in Sources */,
 				C30658B8209A338F00035541 /* ReportActionsTableViewCell.swift in Sources */,
 				C3EF9DD41FFECCFE0001AD15 /* APIWorker.swift in Sources */,
 				C346DD7E209A77CB00FB8971 /* ProductsTableView.swift in Sources */,
+				C33CCF8920A69EEF008F97CF /* Products.swift in Sources */,
 				C3069D00200C1768004B2053 /* Reports.swift in Sources */,
 				C3069CF9200BEF51004B2053 /* ReportsTableViewCell.swift in Sources */,
 			);

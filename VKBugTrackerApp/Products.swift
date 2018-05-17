@@ -6,4 +6,13 @@
 //  Copyright © 2018 Nick Aroot. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct Product {
+    let id: Int
+    let title: String
+    var coverUrl: URL?
+    var coverImage: UIImage?
+}
+
+var products = [Product]()

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14092" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14081.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="179" id="KGk-i7-Jjw" customClass="ReportContentTableViewCell" customModule="VKBugTrackerApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="179"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="178.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <userGuides>
+                    <userLayoutGuide location="8" affinity="minX"/>
+                    <userLayoutGuide location="312" affinity="minX"/>
+                    <userLayoutGuide location="11" affinity="minY"/>
+                    <userLayoutGuide location="167" affinity="minY"/>
+                </userGuides>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ru-BE-cZW" customClass="AvatarImageView" customModule="VKBugTrackerApp" customModuleProvider="target">
+                        <rect key="frame" x="8" y="11" width="47" height="47"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="47" id="Wu5-WW-raL"/>
+                            <constraint firstAttribute="height" constant="47" id="e5f-mF-QBj"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Павел Варламов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ExT-vS-93B">
+                        <rect key="frame" x="64" y="15" width="122" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="3LO-1Z-4nB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                        <color key="textColor" red="0.27843137254901962" green="0.40392156862745099" blue="0.59607843137254901" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="сегодня, 21:22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPV-lU-JcY">
+                        <rect key="frame" x="64" y="37" width="91.5" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="9ZM-qk-2pf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" keyboardDismissMode="interactive" editable="NO" text="Заголовок" translatesAutoresizingMaskIntoConstraints="NO" id="hCi-cx-jmu">
+                        <rect key="frame" x="3" y="66" width="309" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" placeholder="YES" id="xBl-JW-O7Y"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" keyboardDismissMode="interactive" editable="NO" text="Lorem ipsum dolor sit amet" translatesAutoresizingMaskIntoConstraints="NO" id="iUh-1f-yxP">
+                        <rect key="frame" x="3" y="109" width="309" height="58"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="58" placeholder="YES" id="RYm-b0-GcB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                    </textView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="of6-Bm-WHj">
+                        <rect key="frame" x="277" y="23" width="23" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="23" id="49T-hh-nhl"/>
+                            <constraint firstAttribute="height" constant="23" id="lan-10-RbS"/>
+                        </constraints>
+                        <state key="normal" image="info"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jPV-lU-JcY" firstAttribute="leading" secondItem="8ru-BE-cZW" secondAttribute="trailing" constant="9" id="3fr-eH-O4w"/>
+                    <constraint firstItem="jPV-lU-JcY" firstAttribute="top" secondItem="ExT-vS-93B" secondAttribute="bottom" constant="1" id="CoU-VU-i9d"/>
+                    <constraint firstItem="iUh-1f-yxP" firstAttribute="top" secondItem="hCi-cx-jmu" secondAttribute="bottom" constant="8" id="LMr-qm-P0B"/>
+                    <constraint firstItem="ExT-vS-93B" firstAttribute="leading" secondItem="8ru-BE-cZW" secondAttribute="trailing" constant="9" id="NyY-SS-aie"/>
+                    <constraint firstItem="iUh-1f-yxP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="XcU-df-7qK"/>
+                    <constraint firstItem="hCi-cx-jmu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="3" id="Z4X-0d-KZB"/>
+                    <constraint firstItem="hCi-cx-jmu" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="8" id="fT4-eC-1fC"/>
+                    <constraint firstItem="of6-Bm-WHj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="12" id="jO6-HF-SR9"/>
+                    <constraint firstItem="iUh-1f-yxP" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="8" id="lFS-vc-2xH"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="of6-Bm-WHj" secondAttribute="trailing" constant="4" id="m82-S3-1sC"/>
+                    <constraint firstItem="hCi-cx-jmu" firstAttribute="top" secondItem="8ru-BE-cZW" secondAttribute="bottom" constant="8" id="maV-ya-8rU"/>
+                    <constraint firstItem="8ru-BE-cZW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="tMT-A7-lhj"/>
+                    <constraint firstItem="ExT-vS-93B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="uNF-KQ-pAc"/>
+                    <constraint firstItem="8ru-BE-cZW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="uu9-Gl-WgP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="authorAvatar" destination="8ru-BE-cZW" id="y0T-jR-5J8"/>
+                <outlet property="authorDate" destination="jPV-lU-JcY" id="XgH-n0-TEP"/>
+                <outlet property="authorName" destination="ExT-vS-93B" id="6wc-kc-29P"/>
+                <outlet property="bookmarkButton" destination="of6-Bm-WHj" id="NV2-5E-PyE"/>
+                <outlet property="textContent" destination="iUh-1f-yxP" id="6Mp-5A-Tq8"/>
+                <outlet property="textTitle" destination="hCi-cx-jmu" id="U6k-6U-7R3"/>
+            </connections>
+            <point key="canvasLocation" x="-70" y="313.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="info" width="24" height="24"/>
+    </resources>
+</document>

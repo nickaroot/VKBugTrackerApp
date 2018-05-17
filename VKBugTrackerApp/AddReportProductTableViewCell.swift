@@ -1,0 +1,24 @@
+//
+//  AddReportProductTableViewCell.swift
+//  VKBugTrackerApp
+//
+//  Created by Nick Arut on 04.05.2018.
+//  Copyright © 2018 Nick Aroot. All rights reserved.
+//
+
+import UIKit
+
+class AddReportProductTableViewCell: UITableViewCell {
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+}
