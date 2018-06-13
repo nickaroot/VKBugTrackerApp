@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reportsStatusCell" id="gTV-IL-0wX" customClass="ReportsStatusCollectionViewCell" customModule="VKBugTrackerApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="66" height="20"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <userGuides>
+                <userLayoutGuide location="12" affinity="minX"/>
+            </userGuides>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="66" height="20"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o57-CJ-xMM" customClass="AvatarImageView" customModule="VKBugTrackerApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="7" width="6" height="6"/>
+                        <color key="backgroundColor" red="0.36078431370000003" green="0.56470588239999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="6" id="G6F-vD-xT9"/>
+                            <constraint firstAttribute="width" constant="6" id="XVJ-3f-wCS"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="rounded" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Статус" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzN-Pw-klU">
+                        <rect key="frame" x="12" y="2" width="41" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.36078431370000003" green="0.56470588239999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="qzN-Pw-klU" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="6ap-YZ-kS5"/>
+                <constraint firstItem="qzN-Pw-klU" firstAttribute="leading" secondItem="o57-CJ-xMM" secondAttribute="trailing" constant="6" id="8G1-d0-cic"/>
+                <constraint firstItem="o57-CJ-xMM" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="CAS-IQ-GLg"/>
+                <constraint firstItem="o57-CJ-xMM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dco-z2-Cns"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="66" height="20"/>
+            <connections>
+                <outlet property="statusIndicator" destination="o57-CJ-xMM" id="Ffu-L7-NV4"/>
+                <outlet property="statusTitle" destination="qzN-Pw-klU" id="fxj-Tq-ymI"/>
+            </connections>
+            <point key="canvasLocation" x="42" y="39"/>
+        </collectionViewCell>
+    </objects>
+</document>

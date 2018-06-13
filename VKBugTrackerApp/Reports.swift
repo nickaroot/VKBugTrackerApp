@@ -17,13 +17,31 @@ struct Tag {
 }
 
 struct Report {
-    var id: Int
-    var title: String
-    var date: String
-    var hash: String
-    var comments: String
-    var status: String
+    var id: Int?
+    var title: String?
+    var date: String?
+    var hash: String?
+    var comments: String?
+    var status: String?
     var tags: [Tag]
+    
+    init( id: Int? = nil,
+        title: String? = nil,
+        date: String? = nil,
+        hash: String? = nil,
+        comments: String? = nil,
+        status: String? = nil,
+        tags: [Tag] = [Tag]() ) {
+        
+        self.id = id
+        self.title = title
+        self.date = date
+        self.hash = hash
+        self.comments = comments
+        self.status = status
+        self.tags = tags
+        
+    }
 }
 
 var reports = [Report]()

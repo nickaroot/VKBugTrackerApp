@@ -23,6 +23,8 @@
 		C3069D06201012BC004B2053 /* TextFieldPlaceholderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3069D05201012BC004B2053 /* TextFieldPlaceholderExtension.swift */; };
 		C3096F2B205B550100384D8E /* ReportAttachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3096F2A205B550100384D8E /* ReportAttachments.swift */; };
 		C324FBAE209B284F00D9A668 /* AddReportAlternativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C324FBAD209B284F00D9A668 /* AddReportAlternativeViewController.swift */; };
+		C32A3B3720CD93FE001DABAE /* ReportsStatusCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32A3B3520CD93FE001DABAE /* ReportsStatusCollectionViewCell.swift */; };
+		C32A3B3820CD93FE001DABAE /* ReportsStatusCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C32A3B3620CD93FE001DABAE /* ReportsStatusCollectionViewCell.xib */; };
 		C331B6901FF66FA900AD0984 /* SizeToFitHeightExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B68F1FF66FA900AD0984 /* SizeToFitHeightExtensions.swift */; };
 		C331B6921FF704A000AD0984 /* NavigationBarHideShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B6911FF704A000AD0984 /* NavigationBarHideShadowExtension.swift */; };
 		C331B6941FF722B900AD0984 /* ColorHexExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331B6931FF722B900AD0984 /* ColorHexExtension.swift */; };
@@ -30,6 +32,7 @@
 		C3334BB42050BBBB004B1813 /* ReportAttachmentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3334BB22050BBBB004B1813 /* ReportAttachmentsTableViewCell.swift */; };
 		C3334BB52050BBBB004B1813 /* ReportAttachmentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3334BB32050BBBB004B1813 /* ReportAttachmentsTableViewCell.xib */; };
 		C3380A84204F3D94003D6EAB /* ReportAlternativeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3380A83204F3D94003D6EAB /* ReportAlternativeViewController.swift */; };
+		C33A2AEE20C9E32A00E84FB7 /* BugTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33A2AED20C9E32A00E84FB7 /* BugTracker.swift */; };
 		C33BC6AE209BBA1A0017E1B4 /* AddReportProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33BC6AC209BBA1A0017E1B4 /* AddReportProductTableViewCell.swift */; };
 		C33BC6AF209BBA1A0017E1B4 /* AddReportProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C33BC6AD209BBA1A0017E1B4 /* AddReportProductTableViewCell.xib */; };
 		C33BC6B2209BBA390017E1B4 /* AddReportTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33BC6B0209BBA390017E1B4 /* AddReportTitleTableViewCell.swift */; };
@@ -125,6 +128,8 @@
 		C3069D05201012BC004B2053 /* TextFieldPlaceholderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPlaceholderExtension.swift; sourceTree = "<group>"; };
 		C3096F2A205B550100384D8E /* ReportAttachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAttachments.swift; sourceTree = "<group>"; };
 		C324FBAD209B284F00D9A668 /* AddReportAlternativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportAlternativeViewController.swift; sourceTree = "<group>"; };
+		C32A3B3520CD93FE001DABAE /* ReportsStatusCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsStatusCollectionViewCell.swift; sourceTree = "<group>"; };
+		C32A3B3620CD93FE001DABAE /* ReportsStatusCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportsStatusCollectionViewCell.xib; sourceTree = "<group>"; };
 		C331B68F1FF66FA900AD0984 /* SizeToFitHeightExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeToFitHeightExtensions.swift; sourceTree = "<group>"; };
 		C331B6911FF704A000AD0984 /* NavigationBarHideShadowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarHideShadowExtension.swift; sourceTree = "<group>"; };
 		C331B6931FF722B900AD0984 /* ColorHexExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHexExtension.swift; sourceTree = "<group>"; };
@@ -132,6 +137,7 @@
 		C3334BB22050BBBB004B1813 /* ReportAttachmentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAttachmentsTableViewCell.swift; sourceTree = "<group>"; };
 		C3334BB32050BBBB004B1813 /* ReportAttachmentsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportAttachmentsTableViewCell.xib; sourceTree = "<group>"; };
 		C3380A83204F3D94003D6EAB /* ReportAlternativeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAlternativeViewController.swift; sourceTree = "<group>"; };
+		C33A2AED20C9E32A00E84FB7 /* BugTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugTracker.swift; sourceTree = "<group>"; };
 		C33BC6AC209BBA1A0017E1B4 /* AddReportProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportProductTableViewCell.swift; sourceTree = "<group>"; };
 		C33BC6AD209BBA1A0017E1B4 /* AddReportProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddReportProductTableViewCell.xib; sourceTree = "<group>"; };
 		C33BC6B0209BBA390017E1B4 /* AddReportTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReportTitleTableViewCell.swift; sourceTree = "<group>"; };
@@ -263,6 +269,8 @@
 				C3069CF8200BEF51004B2053 /* ReportsTableViewCell.xib */,
 				C3069CFB200BF907004B2053 /* ReportsTagsCollectionViewCell.swift */,
 				C3069CFC200BF907004B2053 /* ReportsTagsCollectionViewCell.xib */,
+				C32A3B3520CD93FE001DABAE /* ReportsStatusCollectionViewCell.swift */,
+				C32A3B3620CD93FE001DABAE /* ReportsStatusCollectionViewCell.xib */,
 				C3D2319F1FF00675008C66FC /* ReportsViewController.swift */,
 			);
 			name = List;
@@ -362,6 +370,7 @@
 				C3D231A31FF00675008C66FC /* Main.storyboard */,
 				C300B524202121CC0032FEBB /* Media.xcassets */,
 				C33CCF8820A69EEF008F97CF /* Products.swift */,
+				C33A2AED20C9E32A00E84FB7 /* BugTracker.swift */,
 			);
 			path = VKBugTrackerApp;
 			sourceTree = "<group>";
@@ -521,6 +530,7 @@
 				C3069CFE200BF907004B2053 /* ReportsTagsCollectionViewCell.xib in Resources */,
 				C33BC6B3209BBA390017E1B4 /* AddReportTitleTableViewCell.xib in Resources */,
 				C3D231A51FF00675008C66FC /* Main.storyboard in Resources */,
+				C32A3B3820CD93FE001DABAE /* ReportsStatusCollectionViewCell.xib in Resources */,
 				C3D696EA2050821E00C5BF01 /* ReportContentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,6 +557,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3AC5D431FFEA7C6005A9242 /* AttachmentsViewController.swift in Sources */,
+				C33A2AEE20C9E32A00E84FB7 /* BugTracker.swift in Sources */,
 				C3688180200203430075A6E3 /* AttachmentsCollectionViewCell.swift in Sources */,
 				C33BC6B2209BBA390017E1B4 /* AddReportTitleTableViewCell.swift in Sources */,
 				C3D231CE1FF006CF008C66FC /* AuthViewController.swift in Sources */,
@@ -587,6 +598,7 @@
 				C346DD84209A798800FB8971 /* CommentTextField.swift in Sources */,
 				C3069D06201012BC004B2053 /* TextFieldPlaceholderExtension.swift in Sources */,
 				C30658B8209A338F00035541 /* ReportActionsTableViewCell.swift in Sources */,
+				C32A3B3720CD93FE001DABAE /* ReportsStatusCollectionViewCell.swift in Sources */,
 				C3EF9DD41FFECCFE0001AD15 /* APIWorker.swift in Sources */,
 				C346DD7E209A77CB00FB8971 /* ProductsTableView.swift in Sources */,
 				C33CCF8920A69EEF008F97CF /* Products.swift in Sources */,
@@ -753,12 +765,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "";
-				DEVELOPMENT_TEAM = 3BXJUQ64W4;
+				DEVELOPMENT_TEAM = Y7BEBZQYA6;
 				INFOPLIST_FILE = VKBugTrackerApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nickaroot.VKBugTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickaroot.test.VKBugTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -776,12 +788,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "";
-				DEVELOPMENT_TEAM = 3BXJUQ64W4;
+				DEVELOPMENT_TEAM = Y7BEBZQYA6;
 				INFOPLIST_FILE = VKBugTrackerApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nickaroot.VKBugTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nickaroot.test.VKBugTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

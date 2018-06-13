@@ -23,9 +23,9 @@ class AuthViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
         webView.uiDelegate = self
         webView.navigationDelegate = self
         
-        let myURL = URL(string: "https://vk.com/bugtracker")
-        let myRequest = URLRequest(url: myURL!)
-        webView.load(myRequest)
+        let url = URL(string: "https://vk.com/bugtracker")
+        let request = URLRequest(url: url!)
+        webView.load(request)
         
     }
     

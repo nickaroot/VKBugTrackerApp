@@ -28,10 +28,13 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
         lastQuery = "",
         keyboardShowed = false,
         reportsIsLoaded = 0,
-        cellHeight: CGFloat = 72,
+        cellHeight: CGFloat = 79,
         cellBuffer: CGFloat = 2,
         loadInProgress = false,
         tableHeight = 0
+    
+    var reportsList: BugTracker.ReportsList?,
+        reportsListSearching: BugTracker.ReportsList?
     
     override func viewDidLoad() {
         self.navigationController?.navigationBar.shouldRemoveShadow(true)
@@ -81,14 +84,18 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
         if (searchField.text == "") {
             searchField.textAlignment = .center
             isSearching = false
-            self.parseReports(self.minTimestampLast, "", query: "")
+//            self.parseReports(self.minTimestampLast, "", query: "")
+            self.getReportsList(.update)
         }
         keyboardShowed = false
     }
     
     @IBAction func searchBarPrimaryAction(_ sender: Any) {
-        self.searchingMaxTimestampLast = ""
-        self.parseReports("", "", query: searchField.text!)
+//        self.searchingMaxTimestampLast = ""
+//        self.parseReports("", "", query: searchField.text!)
+        
+        isSearching = true
+        getReportsListSearching(.init, query: searchField.text!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -102,16 +109,24 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         DispatchQueue.main.async {
             if (isSearching) {
-                self.parseReports(self.searchingMinTimestampLast, "", query: self.searchField.text!)
+//                self.parseReports(self.searchingMinTimestampLast, "", query: self.searchField.text!)
+                
+                self.getReportsListSearching(.update, query: nil)
+                
             } else {
-                self.parseReports(self.minTimestampLast, "", query: "")
+//                self.parseReports(self.minTimestampLast, "", query: "")
+                
+                self.reportsList == nil ? self.getReportsList(.init) : self.getReportsList(.update)
             }
         }
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if refreshControl.isRefreshing {
-            parseReports(minTimestampLast, "", query: lastQuery)
+//            parseReports(minTimestampLast, "", query: lastQuery)
+            
+            isSearching ? getReportsListSearching(.update, query: nil) : getReportsList(.update)
+            
             timer = Timer.scheduledTimer(timeInterval: 2, target: self,   selector: (#selector(ReportsViewController.refreshControlEndRefreshing)), userInfo: nil, repeats: true)
         }
     }
@@ -326,15 +341,21 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if isSearching {
             cell.titleLabel.text = reportsSearching[indexPath.row].title
-            cell.dateLabel.text = reportsSearching[indexPath.row].date
+//            cell.dateLabel.text = reportsSearching[indexPath.row].date
             cell.commentLabel.text = reportsSearching[indexPath.row].comments
         } else {
             cell.titleLabel.text = reports[indexPath.row].title
-            cell.dateLabel.text = reports[indexPath.row].date
+//            cell.dateLabel.text = reports[indexPath.row].date
             cell.commentLabel.text = reports[indexPath.row].comments
         }
         
         cell.item = indexPath.item
+        cell.selectionStyle = .none
+        
+        cell.titleLabel.sizeToFitHeight()
+        
+        let titleHeight = cell.titleLabel.frame.size.height //20 * (cell.titleLabel.frame.size.height / 20.3333333333333)
+        cellHeight = 14 + titleHeight + 10 + cell.tagsCollection.layer.frame.size.height + 14 + 7
         
         return cell
     }
@@ -365,11 +386,13 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             self.infiniteControl.backgroundColor = .vkBlue
             
-            if !isSearching {
-                parseReports("", maxTimestampLast, query: lastQuery)
-            } else {
-                parseReports("", searchingMaxTimestampLast, query: lastQuery)
-            }
+//            if !isSearching {
+//                parseReports("", maxTimestampLast, query: lastQuery)
+//            } else {
+//                parseReports("", searchingMaxTimestampLast, query: lastQuery)
+//            }
+            
+            isSearching ? getReportsListSearching(.infinite, query: nil) : getReportsList(.infinite)
         }
     }
     
@@ -395,6 +418,208 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.tableView.reloadData()
         } else {
             isSearching = true
+        }
+    }
+    
+    ////////
+    //////
+    ////
+    //
+    
+    enum reportsListAction {
+        case `init`
+        case update
+        case infinite
+    }
+    
+    func getReportsList(_ action: reportsListAction) {
+        switch action {
+        case .init:
+            self.reportsList = BugTracker.ReportsList(query: "", completion: { (response) in
+                
+                if response.success {
+                    
+                    if case .reportsListData(let loadedReports)? = response.data {
+                        
+                        reports.insert(contentsOf: loadedReports, at: 0)
+                        
+                        if self.isCellsFitsTableView(r: reports) {
+                            self.tableView.backgroundColor = .vkBlue
+                        } else {
+                            self.tableView.backgroundColor = .white
+                        }
+                        
+                        self.reportsTableReload()
+                        
+                    }
+                    
+                } else {
+                    
+                    print(response.error!.description)
+                    
+                }
+                
+            })
+            
+        case .update:
+            self.reportsList?.updateReports(completion: { (response) in
+                
+                if response.success {
+                    
+                    if case .reportsListData(let loadedReports)? = response.data {
+                        
+                        reports.insert(contentsOf: loadedReports, at: 0)
+                        
+                        if self.isCellsFitsTableView(r: reports) {
+                            self.tableView.backgroundColor = .vkBlue
+                        } else {
+                            self.tableView.backgroundColor = .white
+                        }
+                        
+                        self.reportsTableReload()
+                        
+                    }
+                    
+                } else {
+                    
+                    print(response.error!.description)
+                    
+                }
+                
+            })
+            
+        case .infinite:
+            self.reportsList?.loadMoreReports(completion: { (response) in
+                
+                if response.success {
+                    
+                    if case .reportsListData(let loadedReports)? = response.data {
+                        
+                        reports.append(contentsOf: loadedReports)
+                        
+                        if self.isCellsFitsTableView(r: reports) {
+                            self.tableView.backgroundColor = .vkBlue
+                        } else {
+                            self.tableView.backgroundColor = .white
+                        }
+                        
+                        self.reportsTableReload()
+                        
+                    }
+                    
+                } else {
+                    
+                    if response.error?.code == 103 {
+                        DispatchQueue.main.async {
+                            self.loadInProgress = false
+                            self.infiniteControl.stopAnimating()
+                        }
+                    } else {
+                        print(response.error!.description)
+                    }
+                    
+                }
+                
+            })
+        }
+    }
+    
+    func getReportsListSearching(_ action: reportsListAction, query: String?) {
+        switch action {
+        case .init:
+            self.reportsListSearching = BugTracker.ReportsList(query: query!, completion: { (response) in
+                
+                if response.success {
+                    
+                    if case .reportsListData(let loadedReports)? = response.data {
+                        
+                        reportsSearching.insert(contentsOf: loadedReports, at: 0)
+                        
+                        if self.isCellsFitsTableView(r: reportsSearching) {
+                            self.tableView.backgroundColor = .vkBlue
+                        } else {
+                            self.tableView.backgroundColor = .white
+                        }
+                        
+                        self.reportsTableReload()
+                        
+                    }
+                    
+                } else {
+                    
+                    print(response.error!.description)
+                    
+                }
+                
+            })
+            
+        case .update:
+            self.reportsListSearching?.updateReports(completion: { (response) in
+                
+                if response.success {
+                    
+                    if case .reportsListData(let loadedReports)? = response.data {
+                        
+                        reportsSearching.insert(contentsOf: loadedReports, at: 0)
+                        
+                        if self.isCellsFitsTableView(r: reportsSearching) {
+                            self.tableView.backgroundColor = .vkBlue
+                        } else {
+                            self.tableView.backgroundColor = .white
+                        }
+                        
+                        self.reportsTableReload()
+                        
+                    }
+                    
+                } else {
+                    
+                    print(response.error!.description)
+                    
+                }
+                
+            })
+            
+        case .infinite:
+            self.reportsListSearching?.loadMoreReports(completion: { (response) in
+                
+                if response.success {
+                    
+                    if case .reportsListData(let loadedReports)? = response.data {
+                        
+                        reportsSearching.append(contentsOf: loadedReports)
+                        
+                        if self.isCellsFitsTableView(r: reportsSearching) {
+                            self.tableView.backgroundColor = .vkBlue
+                        } else {
+                            self.tableView.backgroundColor = .white
+                        }
+                        
+                        self.reportsTableReload()
+                        
+                    }
+                    
+                } else {
+                    
+                    print(response.error!.description)
+                    
+                }
+                
+            })
+        }
+    }
+    
+    func reportsTableReload() {
+        DispatchQueue.main.async {
+            
+            self.tableView.reloadData()
+            
+            self.loadInProgress = false
+            self.infiniteControl.stopAnimating()
+            self.activityIndicator.stopAnimating()
+            UIView.animate(withDuration: 0.5, animations: {
+                self.tableView.alpha = 1
+            })
         }
     }
 }
