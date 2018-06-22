@@ -40,20 +40,20 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.navigationController?.navigationBar.shouldRemoveShadow(true)
 //        self.edgesForExtendedLayout = .bottom
         tableView.alpha = 0
-        view.backgroundColor = .white
+        view.backgroundColor = .grayBg
         self.tableView.rowHeight = cellHeight
         
         tableHeight = Int(tableView.frame.size.height)
         
         refreshControl = UIRefreshControl()
         
-        refreshControl.backgroundColor = .vkBlue
+        refreshControl.backgroundColor = .grayBg
         refreshControl.tintColor = .white
         
         infiniteControl = UIActivityIndicatorView(activityIndicatorStyle: .white)
         infiniteControl.frame = CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: 44)
         
-        infiniteControl.backgroundColor = .vkBlue
+        infiniteControl.backgroundColor = .grayBg
         
         if #available(iOS 10.0, *) {
             tableView.refreshControl = refreshControl
@@ -64,6 +64,16 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.tableFooterView = infiniteControl
         
         customizeSearchBar()
+        
+        productsAvatars[0] = UIImage(named: "product_0")
+        productsAvatars[1] = UIImage(named: "product_1")
+        productsAvatars[3] = UIImage(named: "product_3")
+        productsAvatars[15] = UIImage(named: "product_15")
+        productsAvatars[20] = UIImage(named: "product_20")
+        productsAvatars[22] = UIImage(named: "product_22")
+        productsAvatars[32] = UIImage(named: "product_32")
+        productsAvatars[50] = UIImage(named: "product_50")
+        productsAvatars[60] = UIImage(named: "product_60")
     }
     
     func customizeSearchBar() {
@@ -127,7 +137,7 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             isSearching ? getReportsListSearching(.update, query: nil) : getReportsList(.update)
             
-            timer = Timer.scheduledTimer(timeInterval: 2, target: self,   selector: (#selector(ReportsViewController.refreshControlEndRefreshing)), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: (#selector(ReportsViewController.refreshControlEndRefreshing)), userInfo: nil, repeats: true)
         }
     }
     
@@ -170,7 +180,7 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
                     let doc = try HTML(html: responseString!, encoding: .windowsCP1251)
                     
                     for reportsRow in doc.css(".bt_report_row") {
-                        var report = Report(id: 0, title: "", date: "", hash: "", comments: "", status: "", tags: [])
+                        var report = Report(id: 0, title: "", date: "", hash: "", comments: "", status: nil, tags: [])
                         
                         if let reportsRowTitle = reportsRow.at_css(".bt_report_title a") {
                             report.id = Int(String(describing: ((reportsRowTitle["href"]!.split(separator: "&")[1]).split(separator: "=")[1])))!
@@ -185,7 +195,7 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
                         }
                         
                         if let reportsRowInfoStatus = reportsRow.at_css(".bt_report_info_status .bt_report_info__value") {
-                            report.status = reportsRowInfoStatus.text!.lowercased()
+                            report.status = Status(style: .open, title: reportsRowInfoStatus.text!.lowercased())
                         }
                         
                         if let reportsRowFav = reportsRow.at_css(".bt_report_fav") {
@@ -227,11 +237,14 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
                             
                             reports.insert(contentsOf: loadedReports, at: 0)
                             
-                            if self.isCellsFitsTableView(r: reports) {
-                                self.tableView.backgroundColor = .vkBlue
-                            } else {
-                                self.tableView.backgroundColor = .white
-                            }
+//                            if self.isCellsFitsTableView(r: reports) {
+//                                self.tableView.backgroundColor = .vkBlue
+//                            } else {
+//                                self.tableView.backgroundColor = .white
+//                            }
+                            
+                            self.tableView.backgroundColor = .grayBg
+                            
                         } else { // Searching
                             isSearching = true
                             
@@ -250,11 +263,14 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
                                 reportsSearching = loadedReports
                             }
                             
-                            if self.isCellsFitsTableView(r: reportsSearching) {
-                                self.tableView.backgroundColor = .vkBlue
-                            } else {
-                                self.tableView.backgroundColor = .white
-                            }
+//                            if self.isCellsFitsTableView(r: reportsSearching) {
+//                                self.tableView.backgroundColor = .vkBlue
+//                            } else {
+//                                self.tableView.backgroundColor = .white
+//                            }
+                            
+                            self.tableView.backgroundColor = .grayBg
+                            
                         }
                     } else {
                         reports.append(contentsOf: loadedReports)
@@ -282,7 +298,7 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
             } else {
                 DispatchQueue.main.async {
-                    self.infiniteControl.backgroundColor = .white
+                    self.infiniteControl.backgroundColor = .grayBg
                 }
             }
         }
@@ -334,28 +350,73 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cellHeight
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 49))
+        
+        label.text = "Отчеты"
+        
+        return label
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = Bundle.main.loadNibNamed("ReportsTableViewCell", owner: self, options: nil)?.first as! ReportsTableViewCell
         
         cell.isSearching = isSearching
         
         if isSearching {
             cell.titleLabel.text = reportsSearching[indexPath.row].title
-//            cell.dateLabel.text = reportsSearching[indexPath.row].date
+            cell.dateLabel.text = reportsSearching[indexPath.row].date
             cell.commentLabel.text = reportsSearching[indexPath.row].comments
+            
+            if productsAvatars[reports[indexPath.row].product!.id] != nil {
+                cell.productAvatarView.image = productsAvatars[reportsSearching[indexPath.row].product!.id]!
+            } else {
+                cell.productAvatarView.image = productsAvatars[0]!
+            }
+            
+            cell.productTitleLabel.text = reportsSearching[indexPath.row].product?.title
+            cell.authorLabel.text = reportsSearching[indexPath.row].author
+            cell.statusLabel.text = reportsSearching[indexPath.row].status?.title
+            
+            switch (reportsSearching[indexPath.row].status?.style) {
+                case .open?:
+                    cell.statusIndicator.backgroundColor = UIColor.green
+                    break
+                case .closed?:
+                    cell.statusIndicator.backgroundColor = UIColor.red
+                    break
+                case .none:
+                    break
+            }
+            
         } else {
             cell.titleLabel.text = reports[indexPath.row].title
-//            cell.dateLabel.text = reports[indexPath.row].date
+            cell.dateLabel.text = reports[indexPath.row].date
             cell.commentLabel.text = reports[indexPath.row].comments
+            
+            if productsAvatars[reports[indexPath.row].product!.id] != nil {
+                cell.productAvatarView.image = productsAvatars[reports[indexPath.row].product!.id]!
+            } else {
+                cell.productAvatarView.image = productsAvatars[0]!
+            }
+            
+            cell.productTitleLabel.text = reports[indexPath.row].product?.title
+            cell.authorLabel.text = reports[indexPath.row].author
         }
         
         cell.item = indexPath.item
         cell.selectionStyle = .none
         
-        cell.titleLabel.sizeToFitHeight()
+        cell.titleLabel.adjustHeight()
+        
+        let productAvatarHeight = cell.productAvatarView.layer.frame.size.height
+        let tagsCollectionHeight = cell.tagsCollection.layer.frame.size.height
+        let dateLabelHeight = cell.dateLabel.layer.frame.size.height
         
         let titleHeight = cell.titleLabel.frame.size.height //20 * (cell.titleLabel.frame.size.height / 20.3333333333333)
-        cellHeight = 14 + titleHeight + 10 + cell.tagsCollection.layer.frame.size.height + 14 + 7
+        cellHeight = 24 + productAvatarHeight + 8 + titleHeight + 11 + tagsCollectionHeight + 24 + dateLabelHeight + 12
         
         return cell
     }
@@ -384,7 +445,7 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
             loadInProgress = true
             infiniteControl.startAnimating()
             
-            self.infiniteControl.backgroundColor = .vkBlue
+            self.infiniteControl.backgroundColor = .grayBg
             
 //            if !isSearching {
 //                parseReports("", maxTimestampLast, query: lastQuery)
@@ -443,11 +504,13 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
                         
                         reports.insert(contentsOf: loadedReports, at: 0)
                         
-                        if self.isCellsFitsTableView(r: reports) {
-                            self.tableView.backgroundColor = .vkBlue
-                        } else {
-                            self.tableView.backgroundColor = .white
-                        }
+//                        if self.isCellsFitsTableView(r: reports) {
+//                            self.tableView.backgroundColor = .vkBlue
+//                        } else {
+//                            self.tableView.backgroundColor = .white
+//                        }
+                        
+                        self.tableView.backgroundColor = .grayBg
                         
                         self.reportsTableReload()
                         
@@ -470,11 +533,13 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
                         
                         reports.insert(contentsOf: loadedReports, at: 0)
                         
-                        if self.isCellsFitsTableView(r: reports) {
-                            self.tableView.backgroundColor = .vkBlue
-                        } else {
-                            self.tableView.backgroundColor = .white
-                        }
+//                        if self.isCellsFitsTableView(r: reports) {
+//                            self.tableView.backgroundColor = .vkBlue
+//                        } else {
+//                            self.tableView.backgroundColor = .white
+//                        }
+                        
+                        self.tableView.backgroundColor = .grayBg
                         
                         self.reportsTableReload()
                         
@@ -497,11 +562,13 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
                         
                         reports.append(contentsOf: loadedReports)
                         
-                        if self.isCellsFitsTableView(r: reports) {
-                            self.tableView.backgroundColor = .vkBlue
-                        } else {
-                            self.tableView.backgroundColor = .white
-                        }
+//                        if self.isCellsFitsTableView(r: reports) {
+//                            self.tableView.backgroundColor = .vkBlue
+//                        } else {
+//                            self.tableView.backgroundColor = .white
+//                        }
+
+                        self.tableView.backgroundColor = .grayBg
                         
                         self.reportsTableReload()
                         
@@ -535,11 +602,13 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
                         
                         reportsSearching.insert(contentsOf: loadedReports, at: 0)
                         
-                        if self.isCellsFitsTableView(r: reportsSearching) {
-                            self.tableView.backgroundColor = .vkBlue
-                        } else {
-                            self.tableView.backgroundColor = .white
-                        }
+//                        if self.isCellsFitsTableView(r: reportsSearching) {
+//                            self.tableView.backgroundColor = .vkBlue
+//                        } else {
+//                            self.tableView.backgroundColor = .white
+//                        }
+                        
+                        self.tableView.backgroundColor = .grayBg
                         
                         self.reportsTableReload()
                         
@@ -562,11 +631,13 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
                         
                         reportsSearching.insert(contentsOf: loadedReports, at: 0)
                         
-                        if self.isCellsFitsTableView(r: reportsSearching) {
-                            self.tableView.backgroundColor = .vkBlue
-                        } else {
-                            self.tableView.backgroundColor = .white
-                        }
+//                        if self.isCellsFitsTableView(r: reportsSearching) {
+//                            self.tableView.backgroundColor = .vkBlue
+//                        } else {
+//                            self.tableView.backgroundColor = .white
+//                        }
+                        
+                        self.tableView.backgroundColor = .grayBg
                         
                         self.reportsTableReload()
                         
@@ -589,11 +660,13 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
                         
                         reportsSearching.append(contentsOf: loadedReports)
                         
-                        if self.isCellsFitsTableView(r: reportsSearching) {
-                            self.tableView.backgroundColor = .vkBlue
-                        } else {
-                            self.tableView.backgroundColor = .white
-                        }
+//                        if self.isCellsFitsTableView(r: reportsSearching) {
+//                            self.tableView.backgroundColor = .vkBlue
+//                        } else {
+//                            self.tableView.backgroundColor = .white
+//                        }
+                        
+                        self.tableView.backgroundColor = .grayBg
                         
                         self.reportsTableReload()
                         

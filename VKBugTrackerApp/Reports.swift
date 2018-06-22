@@ -16,13 +16,25 @@ struct Tag {
     var size: CGSize
 }
 
+enum StatusStyle {
+    case open
+    case closed
+}
+
+struct Status {
+    let style: StatusStyle
+    let title: String
+}
+
 struct Report {
     var id: Int?
     var title: String?
     var date: String?
     var hash: String?
     var comments: String?
-    var status: String?
+    var author: String?
+    var status: Status?
+    var product: Tag?
     var tags: [Tag]
     
     init( id: Int? = nil,
@@ -30,7 +42,9 @@ struct Report {
         date: String? = nil,
         hash: String? = nil,
         comments: String? = nil,
-        status: String? = nil,
+        author: String? = nil,
+        status: Status? = nil,
+        product: Tag? = nil,
         tags: [Tag] = [Tag]() ) {
         
         self.id = id
@@ -38,7 +52,9 @@ struct Report {
         self.date = date
         self.hash = hash
         self.comments = comments
+        self.author = author
         self.status = status
+        self.product = product
         self.tags = tags
         
     }

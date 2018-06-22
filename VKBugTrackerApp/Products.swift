@@ -16,3 +16,5 @@ struct Product {
 }
 
 var products = [Product]()
+
+var productsAvatars = [Int: UIImage?]()

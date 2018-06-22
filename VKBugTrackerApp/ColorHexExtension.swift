@@ -46,4 +46,12 @@ extension UIColor {
             return UIColor(hexString: "#4F83BBff")!
         }
     }
+    
+    open class var grayBg: UIColor {
+        get {
+//            return UIColor(hexString: "#E7E8ECff")!
+            return UIColor(red: 0.92455, green: 0.928169, blue: 0.94053, alpha: 1.0)
+            // UIExtendedSRGBColorSpace 0.92455 0.928169 0.94053 1
+        }
+    }
 }

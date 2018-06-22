@@ -555,10 +555,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gVv-Lh-xRG">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gVv-Lh-xRG">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="574"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.56470588239999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <color key="backgroundColor" red="0.90588235294117647" green="0.90980392156862744" blue="0.92549019607843142" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="9pv-A4-QxB" id="HHR-dr-vrM"/>
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="vta-1V-IxE"/>
@@ -569,7 +568,7 @@
                                 <color key="color" red="0.28665733339999999" green="0.45908004050000001" blue="0.65016394850000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.36078431372549019" green="0.56470588235294117" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.90588235289999997" green="0.90980392160000001" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="gVv-Lh-xRG" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="5yU-Em-phR"/>
                             <constraint firstItem="gVv-Lh-xRG" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="Ozj-7c-zba"/>

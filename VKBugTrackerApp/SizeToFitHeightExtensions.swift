@@ -11,7 +11,7 @@ import UIKit
 extension UILabel {
     func sizeToFitHeight() {
         let size: CGSize = self.sizeThatFits(CGSize.init(width: self.frame.size.width, height: CGFloat.greatestFiniteMagnitude))
-        var frame:CGRect = self.frame
+        var frame: CGRect = self.frame
         frame.size.height = size.height
         self.frame = frame
     }

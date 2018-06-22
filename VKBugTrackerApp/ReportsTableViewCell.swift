@@ -10,8 +10,17 @@ import UIKit
 
 class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    @IBOutlet weak var titleLabel: UILabel!
-//    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var productAvatarView: AvatarImageView!
+    @IBOutlet weak var productTitleLabel: UILabel!
+    @IBOutlet weak var bookmarkButton: UIButton!
+    
+    @IBOutlet weak var titleLabel: UITextViewFixed!
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusIndicator: AvatarImageView!
+    
     @IBOutlet weak var tagsCollection: UICollectionView!
     @IBOutlet weak var commentLabel: UILabel!
     
@@ -30,8 +39,8 @@ class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
         tagsCollection.delegate = self
         
         collectionViewWidth = tagsCollection.frame.size.width
-        titleLabel.lineBreakMode = .byWordWrapping
-        titleLabel.numberOfLines = 0
+//        titleLabel.lineBreakMode = .byWordWrapping
+//        titleLabel.numberOfLines = 0
     }
     
     override func didMoveToSuperview() {
@@ -40,11 +49,11 @@ class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
         if (isSearching) {
             if (item! < reportsSearching.count) {
                 tags = reportsSearching[item!].tags
-                tags.insert(Tag(id: -1, type: "status", productId: -1, title: (reportsSearching[item!].status?.firstUppercased)!, size: CGSize(width: 1, height: tagsCollection.contentSize.height - 1)), at: 0)
+//                tags.insert(Tag(id: -1, type: "status", productId: -1, title: (reportsSearching[item!].status?.title.firstUppercased)!, size: CGSize(width: 1, height: tagsCollection.contentSize.height - 1)), at: 0)
             }
         } else {
             tags = reports[item!].tags
-            tags.insert(Tag(id: -1, type: "status", productId: -1, title: (reports[item!].status?.firstUppercased)!, size: CGSize(width: 1, height: tagsCollection.contentSize.height - 1)), at: 0)
+//            tags.insert(Tag(id: -1, type: "status", productId: -1, title: (reports[item!].status?.title.firstUppercased)!, size: CGSize(width: 1, height: tagsCollection.contentSize.height - 1)), at: 0)
         }
         
         tagsCount = tags.count
@@ -70,23 +79,23 @@ class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         collectionView.register(UINib(nibName: "ReportsTagsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "reportsTagsCell")
-        collectionView.register(UINib(nibName: "ReportsStatusCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "reportsStatusCell")
+//        collectionView.register(UINib(nibName: "ReportsStatusCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "reportsStatusCell")
         
-        if indexPath.item == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reportsStatusCell", for: indexPath) as! ReportsStatusCollectionViewCell
-            
-            if !blocked {
-                
-                cell.statusTitle.text = tags[indexPath.item].title
-                cell.statusTitle.sizeToFit()
-                cell.statusTitle.layer.frame.size = CGSize(width: cell.statusTitle.frame.size.width, height: tagsCollection.contentSize.height - 1)
-                cell.layer.frame.size = CGSize(width: cell.statusIndicator.layer.frame.size.width + 6 + cell.statusTitle.layer.frame.size.width, height: tagsCollection.contentSize.height - 1)
-                
-                tags[indexPath.item].size = cell.layer.frame.size
-            }
-            
-            return cell
-        }
+//        if indexPath.item == 0 {
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reportsStatusCell", for: indexPath) as! ReportsStatusCollectionViewCell
+//            
+//            if !blocked {
+//                
+//                cell.statusTitle.text = tags[indexPath.item].title
+//                cell.statusTitle.sizeToFit()
+//                cell.statusTitle.layer.frame.size = CGSize(width: cell.statusTitle.frame.size.width, height: tagsCollection.contentSize.height - 1)
+//                cell.layer.frame.size = CGSize(width: cell.statusIndicator.layer.frame.size.width + 6 + cell.statusTitle.layer.frame.size.width, height: tagsCollection.contentSize.height - 1)
+//                
+//                tags[indexPath.item].size = cell.layer.frame.size
+//            }
+//            
+//            return cell
+//        }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reportsTagsCell", for: indexPath) as! ReportsTagsCollectionViewCell
 

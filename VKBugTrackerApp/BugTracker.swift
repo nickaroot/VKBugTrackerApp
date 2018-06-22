@@ -115,13 +115,14 @@ class BugTracker {
                     
                     if let reportsRowInfoDetails = reportsRow.at_css(".bt_report_info_details") {
                         report.date = String(describing: (reportsRowInfoDetails.innerHTML?.split(separator: "<")[0])!)
-                        if let commentsRow = reportsRowInfoDetails.at_css("a") {
-                            report.comments = commentsRow.text!.matchingStrings(regex: "[0-9]+")[0][0]
+                        if let authorRow = reportsRowInfoDetails.at_css("a") {
+//                            report.comments = commentsRow.text!.matchingStrings(regex: "[0-9]+")[0][0]
+                            report.author = authorRow.text!
                         }
                     }
                     
                     if let reportsRowInfoStatus = reportsRow.at_css(".bt_report_info_status .bt_report_info__value") {
-                        report.status = reportsRowInfoStatus.text!.lowercased()
+                        report.status = Status(style: .open, title: reportsRowInfoStatus.text!.lowercased())
                     }
                     
                     if let reportsRowFav = reportsRow.at_css(".bt_report_fav") {
@@ -136,8 +137,11 @@ class BugTracker {
                         }
                         
                         let type = (reportsRowTag["onclick"]!).matchingStrings(regex: "(?<=').*(?=')")[0][0]
-                        if !(["version", "platform", "platform_version"].contains(type)) {
+                        
+                        if !(["product"].contains(type)) {
                             report.tags.append(Tag(id: Int(ids[0])!, type: type, productId: Int(ids[1])!, title: reportsRowTag.text!, size: CGSize(width: 1, height: 17)))
+                        } else if type == "product" {
+                            report.product = Tag(id: Int(ids[0])!, type: type, productId: Int(ids[1])!, title: reportsRowTag.text!, size: CGSize(width: 1, height: 17))
                         }
                         
                     }

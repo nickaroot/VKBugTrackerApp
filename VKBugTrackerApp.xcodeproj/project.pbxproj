@@ -58,6 +58,7 @@
 		C3AC5D431FFEA7C6005A9242 /* AttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AC5D411FFEA7C6005A9242 /* AttachmentsViewController.swift */; };
 		C3AEEB47207948F900CE2438 /* LabelPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AEEB46207948F900CE2438 /* LabelPadding.swift */; };
 		C3AEEB492079541D00CE2438 /* StringFirstUppercasedExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AEEB482079541D00CE2438 /* StringFirstUppercasedExtension.swift */; };
+		C3BF5BCF20DD2FC000901DAA /* Products.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3BF5BCE20DD2FC000901DAA /* Products.xcassets */; };
 		C3BFD2471FFCDFBF002E44FA /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BFD2451FFCDFBF002E44FA /* ProductsTableViewCell.swift */; };
 		C3BFD2481FFCDFBF002E44FA /* ProductsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3BFD2461FFCDFBF002E44FA /* ProductsTableViewCell.xib */; };
 		C3CEBFB7206A92EE0002D322 /* EditCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CEBFB6206A92EE0002D322 /* EditCommentViewController.swift */; };
@@ -77,6 +78,8 @@
 		C3EF9DD11FFECA300001AD15 /* SwiftyVK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3EF9DCE1FFEC1F50001AD15 /* SwiftyVK.framework */; };
 		C3EF9DD21FFECA300001AD15 /* SwiftyVK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3EF9DCE1FFEC1F50001AD15 /* SwiftyVK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C3EF9DD41FFECCFE0001AD15 /* APIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3EF9DD31FFECCFE0001AD15 /* APIWorker.swift */; };
+		C3F7AE6820DCBCD300DAE753 /* UITextViewFixed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F7AE6720DCBCD300DAE753 /* UITextViewFixed.swift */; };
+		C3F7AE6A20DCC3FC00DAE753 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F7AE6920DCC3FC00DAE753 /* RoundedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +166,7 @@
 		C3AC5D411FFEA7C6005A9242 /* AttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsViewController.swift; sourceTree = "<group>"; };
 		C3AEEB46207948F900CE2438 /* LabelPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPadding.swift; sourceTree = "<group>"; };
 		C3AEEB482079541D00CE2438 /* StringFirstUppercasedExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringFirstUppercasedExtension.swift; sourceTree = "<group>"; };
+		C3BF5BCE20DD2FC000901DAA /* Products.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Products.xcassets; sourceTree = "<group>"; };
 		C3BFD2451FFCDFBF002E44FA /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
 		C3BFD2461FFCDFBF002E44FA /* ProductsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsTableViewCell.xib; sourceTree = "<group>"; };
 		C3CEBFB6206A92EE0002D322 /* EditCommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommentViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 		C3EF9DCE1FFEC1F50001AD15 /* SwiftyVK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyVK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3EF9DCF1FFEC8220001AD15 /* VKDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKDelegate.swift; sourceTree = "<group>"; };
 		C3EF9DD31FFECCFE0001AD15 /* APIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWorker.swift; sourceTree = "<group>"; };
+		C3F7AE6720DCBCD300DAE753 /* UITextViewFixed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewFixed.swift; sourceTree = "<group>"; };
+		C3F7AE6920DCC3FC00DAE753 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +336,8 @@
 				C3AEEB46207948F900CE2438 /* LabelPadding.swift */,
 				C38AD5132061D317001BBC9F /* SearchTextField.swift */,
 				C331B6991FF76D8400AD0984 /* TextFieldWithPadding.swift */,
+				C3F7AE6720DCBCD300DAE753 /* UITextViewFixed.swift */,
+				C3F7AE6920DCC3FC00DAE753 /* RoundedView.swift */,
 			);
 			name = Customs;
 			sourceTree = "<group>";
@@ -369,6 +377,7 @@
 				C37CA6F41FF7EE5C00EDA83E /* LaunchScreen.storyboard */,
 				C3D231A31FF00675008C66FC /* Main.storyboard */,
 				C300B524202121CC0032FEBB /* Media.xcassets */,
+				C3BF5BCE20DD2FC000901DAA /* Products.xcassets */,
 				C33CCF8820A69EEF008F97CF /* Products.swift */,
 				C33A2AED20C9E32A00E84FB7 /* BugTracker.swift */,
 			);
@@ -525,6 +534,7 @@
 				C3D696EE20508E7700C5BF01 /* ReportAttachmentsCollectionViewCell.xib in Resources */,
 				C300B525202121CC0032FEBB /* Media.xcassets in Resources */,
 				C37CA6FB1FF887C500EDA83E /* TagsTableViewCell.xib in Resources */,
+				C3BF5BCF20DD2FC000901DAA /* Products.xcassets in Resources */,
 				C37CA6F51FF7EE5C00EDA83E /* LaunchScreen.storyboard in Resources */,
 				C3BFD2481FFCDFBF002E44FA /* ProductsTableViewCell.xib in Resources */,
 				C3069CFE200BF907004B2053 /* ReportsTagsCollectionViewCell.xib in Resources */,
@@ -564,6 +574,7 @@
 				C3D1D860205BE4FE001AD9A3 /* ReportComments.swift in Sources */,
 				C3AEEB492079541D00CE2438 /* StringFirstUppercasedExtension.swift in Sources */,
 				C3069C8C200570DE004B2053 /* VideoThumbnailParserExtension.swift in Sources */,
+				C3F7AE6A20DCC3FC00DAE753 /* RoundedView.swift in Sources */,
 				C346DD7C209A769B00FB8971 /* AvatarImageView.swift in Sources */,
 				C331B69A1FF76D8400AD0984 /* TextFieldWithPadding.swift in Sources */,
 				C3069D0420101298004B2053 /* RDPicker.swift in Sources */,
@@ -573,6 +584,7 @@
 				C3CEBFB7206A92EE0002D322 /* EditCommentViewController.swift in Sources */,
 				C3069CFD200BF907004B2053 /* ReportsTagsCollectionViewCell.swift in Sources */,
 				C331B6901FF66FA900AD0984 /* SizeToFitHeightExtensions.swift in Sources */,
+				C3F7AE6820DCBCD300DAE753 /* UITextViewFixed.swift in Sources */,
 				C38AD5142061D317001BBC9F /* SearchTextField.swift in Sources */,
 				C3096F2B205B550100384D8E /* ReportAttachments.swift in Sources */,
 				C3D696E92050821E00C5BF01 /* ReportContentTableViewCell.swift in Sources */,
