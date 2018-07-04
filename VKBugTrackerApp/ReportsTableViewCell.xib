@@ -63,10 +63,10 @@
                                             <constraint firstAttribute="height" constant="1" id="p2x-oi-j1e"/>
                                         </constraints>
                                     </view>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="Не обновляются проголосовавшие в опросе в личке после его редактирования" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NiB-B9-2CY" customClass="UITextViewFixed" customModule="VKBugTrackerApp" customModuleProvider="target">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Не обновляются проголосовавшие в опросе в личке после его редактирования" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NiB-B9-2CY" customClass="UITextViewFixed" customModule="VKBugTrackerApp" customModuleProvider="target">
                                         <rect key="frame" x="13" y="51" width="334" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="сегодня в 22:30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDb-hP-wMl">
