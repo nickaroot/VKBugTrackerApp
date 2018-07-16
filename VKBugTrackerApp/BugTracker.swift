@@ -251,6 +251,25 @@ class BugTracker {
         
         init(query: String, completion: @escaping (_ response: Response) -> Void) {
             
+            reports = [
+                
+                Report(id: 0, title: "Не обновляются проголосовавшие в опросе в личке после его редактирования", date: "сегодня в 22:30", hash: "6ab310b2e6a54fdb34", comments: "3", author: "Динар Хайруллин", status: Status(style: .open, title: "Открыт"), product: Tag(id: 20, type: "product", productId: 20, title: "VK для iPhone", size: CGSize(width: 1, height: 1)), tags: [
+                        Tag(id: 113, type: "tag", productId: 20, title: "Беседы", size: CGSize(width: 1, height: 1)),
+                        Tag(id: 187, type: "tag", productId: 20, title: "API", size: CGSize(width: 1, height: 1))
+                    ]),
+                
+                Report(id: 0, title: "Текст сообщения остаётся в поле ввода после определённых действий", date: "сегодня в 16:42", hash: "2410438999e6a5d433", comments: "3", author: "Иван Лосев", status: Status(style: .open, title: "Открыт"), product: Tag(id: 1, type: "product", productId: 1, title: "VK Messenger", size: CGSize(width: 1, height: 1)), tags: [
+                    Tag(id: 11, type: "tag", productId: 1, title: "Стикеры", size: CGSize(width: 1, height: 1)),
+                    Tag(id: 96, type: "tag", productId: 1, title: "Сообщения сообществ", size: CGSize(width: 1, height: 1)),
+                    Tag(id: 4, type: "tag", productId: 1, title: "Сообщения", size: CGSize(width: 1, height: 1))
+                    ])
+            
+            ]
+            
+            #if targetEnvironment(simulator)
+            completion(Response(success: true, error: nil, data: .reportsListData(reports: reports))) // TEST ONLY
+            #endif
+            
             self.query = query
             
             self.requestReports(min: minTimestamp, max: maxTimestamp) { (requestResponse) in

@@ -350,75 +350,286 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cellHeight
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 49))
-        
-        label.text = "Отчеты"
-        
-        return label
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = Bundle.main.loadNibNamed("ReportsTableViewCell", owner: self, options: nil)?.first as! ReportsTableViewCell
+//        let cell = Bundle.main.loadNibNamed("ReportsTableViewCell", owner: self, options: nil)?.first as! ReportsTableViewCell
+//
+//        cell.isSearching = isSearching
+//
+//        if isSearching {
+//            cell.titleLabel.text = reportsSearching[indexPath.row].title
+//            cell.dateLabel.text = reportsSearching[indexPath.row].date
+//            cell.commentLabel.text = reportsSearching[indexPath.row].comments
+//
+//            if productsAvatars[reports[indexPath.row].product!.id] != nil {
+//                cell.productAvatarView.image = productsAvatars[reportsSearching[indexPath.row].product!.id]!
+//            } else {
+//                cell.productAvatarView.image = productsAvatars[0]!
+//            }
+//
+//            cell.productTitleLabel.text = reportsSearching[indexPath.row].product?.title
+//            cell.authorLabel.text = reportsSearching[indexPath.row].author
+//            cell.statusLabel.text = reportsSearching[indexPath.row].status?.title
+//
+//            switch (reportsSearching[indexPath.row].status?.style) {
+//                case .open?:
+//                    cell.statusIndicator.backgroundColor = UIColor.green
+//                    break
+//                case .closed?:
+//                    cell.statusIndicator.backgroundColor = UIColor.red
+//                    break
+//                case .none:
+//                    break
+//            }
+//
+//        } else {
+//            cell.titleLabel.text = reports[indexPath.row].title
+//            cell.dateLabel.text = reports[indexPath.row].date
+//            cell.commentLabel.text = reports[indexPath.row].comments
+//
+//            if productsAvatars[reports[indexPath.row].product!.id] != nil {
+//                cell.productAvatarView.image = productsAvatars[reports[indexPath.row].product!.id]!
+//            } else {
+//                cell.productAvatarView.image = productsAvatars[0]!
+//            }
+//
+//            cell.productTitleLabel.text = reports[indexPath.row].product?.title
+//            cell.authorLabel.text = reports[indexPath.row].author
+//        }
+//
+//        cell.item = indexPath.item
+//        cell.selectionStyle = .none
+//        let width = UIScreen.main.bounds.size.width - 41
+//        let height = cell.titleLabel.text!.height(withConstrainedWidth: width, font: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.regular))
+//        let productAvatarHeight = cell.productAvatarView.layer.frame.size.height
+//        let tagsCollectionHeight = cell.tagsCollection.layer.frame.size.height
+//        let dateLabelHeight = cell.dateLabel.layer.frame.size.height
+//
+//        let titleHeight = height
+//
+//        cellHeight = titleHeight + 145
         
-        cell.isSearching = isSearching
+        // TEST
         
-        if isSearching {
-            cell.titleLabel.text = reportsSearching[indexPath.row].title
-            cell.dateLabel.text = reportsSearching[indexPath.row].date
-            cell.commentLabel.text = reportsSearching[indexPath.row].comments
+        let screenWidth = UIScreen.main.bounds.size.width
+        
+        if indexPath.item == 0 {
+            let titleCell = UITableViewCell()
+            titleCell.frame.size = CGSize(width: screenWidth, height: 42)
+            titleCell.backgroundColor = UIColor(red: 0.906, green: 0.910, blue: 0.925, alpha: 1)
             
-            if productsAvatars[reports[indexPath.row].product!.id] != nil {
-                cell.productAvatarView.image = productsAvatars[reportsSearching[indexPath.row].product!.id]!
-            } else {
-                cell.productAvatarView.image = productsAvatars[0]!
-            }
+            let titleLabel = UILabel()
+            titleCell.addSubview(titleLabel)
             
-            cell.productTitleLabel.text = reportsSearching[indexPath.row].product?.title
-            cell.authorLabel.text = reportsSearching[indexPath.row].author
-            cell.statusLabel.text = reportsSearching[indexPath.row].status?.title
+            titleLabel.frame.size = CGSize(width: 100, height: 20)
+            titleLabel.frame.origin = CGPoint(x: 12, y: 14)
+            titleLabel.text = "Салус"
+            titleLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+            titleLabel.textColor = .black
             
-            switch (reportsSearching[indexPath.row].status?.style) {
-                case .open?:
-                    cell.statusIndicator.backgroundColor = UIColor.green
-                    break
-                case .closed?:
-                    cell.statusIndicator.backgroundColor = UIColor.red
-                    break
-                case .none:
-                    break
-            }
+            cellHeight = titleCell.frame.size.height
             
-        } else {
-            cell.titleLabel.text = reports[indexPath.row].title
-            cell.dateLabel.text = reports[indexPath.row].date
-            cell.commentLabel.text = reports[indexPath.row].comments
-            
-            if productsAvatars[reports[indexPath.row].product!.id] != nil {
-                cell.productAvatarView.image = productsAvatars[reports[indexPath.row].product!.id]!
-            } else {
-                cell.productAvatarView.image = productsAvatars[0]!
-            }
-            
-            cell.productTitleLabel.text = reports[indexPath.row].product?.title
-            cell.authorLabel.text = reports[indexPath.row].author
+            return titleCell
         }
         
-        cell.item = indexPath.item
-        cell.selectionStyle = .none
+        let text = "Не обновляются проголосовавшие в опросе в личке после его редактирования"
         
-        cell.titleLabel.adjustHeight()
+        let textWidth = screenWidth - 41
+        let textHeight = text.height(withConstrainedWidth: textWidth, font: UIFont.systemFont(ofSize: 15, weight: .regular))
+        var frameHeight = CGFloat(0)
+        let leftOffset = CGFloat(12)
         
-        let productAvatarHeight = cell.productAvatarView.layer.frame.size.height
-        let tagsCollectionHeight = cell.tagsCollection.layer.frame.size.height
-        let dateLabelHeight = cell.dateLabel.layer.frame.size.height
+        let frameCell = UITableViewCell()
         
-        let titleHeight = cell.titleLabel.frame.size.height //20 * (cell.titleLabel.frame.size.height / 20.3333333333333)
-        cellHeight = 24 + productAvatarHeight + 8 + titleHeight + 11 + tagsCollectionHeight + 24 + dateLabelHeight + 12
+        frameCell.selectionStyle = .none
+        frameCell.backgroundColor = UIColor(red: 0.906, green: 0.910, blue: 0.925, alpha: 1)
+
+        let roundedView = UIView()
+        let roundedViewMargin = CGFloat(6)
+        frameCell.addSubview(roundedView)
+        frameHeight += roundedViewMargin
         
-        return cell
+        roundedView.frame.origin = CGPoint(x: 7, y: frameHeight)
+        roundedView.backgroundColor = UIColor.white
+        roundedView.layer.cornerRadius = 10
+        frameCell.layer.masksToBounds = true
+        
+        let avatarView = UIImageView()
+        let avatarViewHeight = CGFloat(30)
+        let avatarViewTopMargin = CGFloat(6)
+        roundedView.addSubview(avatarView)
+        frameHeight += avatarViewTopMargin
+        
+        let productAvatar = #imageLiteral(resourceName: "product_20")
+        avatarView.frame.size = CGSize(width: 30, height: avatarViewHeight)
+        avatarView.frame.origin = CGPoint(x: leftOffset, y: frameHeight)
+        avatarView.image = productAvatar
+        avatarView.backgroundColor = UIColor(red: 0.906, green: 0.910, blue: 0.925, alpha: 1)
+        avatarView.layer.cornerRadius = 15
+        avatarView.layer.masksToBounds = true
+        
+        frameHeight += avatarViewHeight
+        
+        let productLabel = UILabel()
+        roundedView.addSubview(productLabel)
+        
+        let productText = "VK для iPhone"
+        productLabel.frame.size = CGSize(width: productText.width(withConstrainedHeight: 17, font: .systemFont(ofSize: 14)), height: 17)
+        productLabel.frame.origin = CGPoint(x: leftOffset + avatarViewHeight + 7, y: (avatarViewHeight + avatarViewTopMargin) / 2)
+        productLabel.text = productText
+        productLabel.font = .systemFont(ofSize: 14)
+        productLabel.textColor = .black
+        
+        let favoriteButton = UIButton()
+        roundedView.addSubview(favoriteButton)
+        
+        favoriteButton.frame.size = CGSize(width: 78, height: 27)
+        favoriteButton.frame.origin = CGPoint(x: screenWidth - 78 - 7 - 19, y: 13)
+        favoriteButton.setTitle("В закладки", for: .normal)
+        favoriteButton.setTitleColor(UIColor(red: 0.322, green: 0.545, blue: 0.816, alpha: 1), for: .normal)
+        favoriteButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        
+        let titleLabel = UILabel()
+        let titleLabelTopMargin = CGFloat(8)
+        roundedView.addSubview(titleLabel)
+        frameHeight += titleLabelTopMargin
+        
+        titleLabel.frame.size = CGSize(width: textWidth, height: textHeight)
+        titleLabel.frame.origin = CGPoint(x: leftOffset + 1, y: frameHeight)
+        titleLabel.text = text
+        titleLabel.numberOfLines = 0
+        titleLabel.font = .systemFont(ofSize: 15)
+        titleLabel.textColor = .black
+        titleLabel.frame.size.height = titleLabel.setLineHeight(lineHeight: 3, labelWidth: titleLabel.frame.size.width)
+        
+        frameHeight += titleLabel.frame.size.height
+        
+        let collectionView = UIView()
+        let collectionViewHeight = CGFloat(21)
+        let collectionViewTopMargin = CGFloat(14)
+//        roundedView.addSubview(collectionView)
+        frameHeight += collectionViewTopMargin
+        
+        collectionView.frame.size = CGSize(width: screenWidth - 68, height: collectionViewHeight)
+        collectionView.frame.origin = CGPoint(x: leftOffset, y: frameHeight)
+        collectionView.backgroundColor = UIColor(red: 0.906, green: 0.910, blue: 0.925, alpha: 1)
+        
+        let collectionViewLabel1 = UILabel()
+        roundedView.addSubview(collectionViewLabel1)
+        
+        let tagText1 = "Музыка"
+        collectionViewLabel1.frame.size = CGSize(width: 16 + tagText1.width(withConstrainedHeight: collectionViewHeight - 1, font: .systemFont(ofSize: 10)), height: collectionViewHeight - 1)
+        collectionViewLabel1.frame.origin = CGPoint(x: leftOffset, y: frameHeight)
+        collectionViewLabel1.text = tagText1
+        collectionViewLabel1.textAlignment = .center
+        collectionViewLabel1.textColor = UIColor(red: 0.333, green: 0.404, blue: 0.490, alpha: 1)
+        collectionViewLabel1.font = .systemFont(ofSize: 10)
+        collectionViewLabel1.backgroundColor = UIColor(red: 0.898, green: 0.922, blue: 0.945, alpha: 1)
+        collectionViewLabel1.layer.cornerRadius = 10
+        collectionViewLabel1.layer.masksToBounds = true
+        
+        let collectionViewLabel2 = UILabel()
+        roundedView.addSubview(collectionViewLabel2)
+        
+        let tagText2 = "API"
+        collectionViewLabel2.frame.size = CGSize(width: (16 + tagText2.width(withConstrainedHeight: collectionViewHeight - 1, font: .systemFont(ofSize: 10))), height: collectionViewHeight - 1)
+        collectionViewLabel2.frame.origin = CGPoint(x: (16 + tagText1.width(withConstrainedHeight: collectionViewHeight - 1, font: .systemFont(ofSize: 10))) + 8 + leftOffset, y: frameHeight)
+        collectionViewLabel2.text = tagText2
+        collectionViewLabel2.textAlignment = .center
+        collectionViewLabel2.textColor = UIColor(red: 0.333, green: 0.404, blue: 0.490, alpha: 1)
+        collectionViewLabel2.font = .systemFont(ofSize: 10)
+        collectionViewLabel2.backgroundColor = UIColor(red: 0.898, green: 0.922, blue: 0.945, alpha: 1)
+        collectionViewLabel2.layer.cornerRadius = 10
+        collectionViewLabel2.layer.masksToBounds = true
+        
+        let commentLabel = LabelPadding()
+        roundedView.addSubview(commentLabel)
+        
+        let commentsCount = "2"
+        commentLabel.frame.size = CGSize(width: 20, height: collectionViewHeight - 1)
+        commentLabel.frame.origin = CGPoint(x: screenWidth - 48, y: frameHeight)
+        commentLabel.text = commentsCount
+        commentLabel.font = .systemFont(ofSize: 12)
+        commentLabel.textAlignment = .center
+        commentLabel.textColor = UIColor(red: 0.361, green: 0.565, blue: 0.780, alpha: 1)
+        commentLabel.topInset = 0
+        commentLabel.bottomInset = 0
+        commentLabel.leftInset = 5
+        commentLabel.rightInset = 5
+        commentLabel.rounded = true
+        commentLabel.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.957, alpha: 1)
+        
+        frameHeight += collectionViewHeight
+        
+        let separatorView = UIView()
+        let separatorViewHeight = CGFloat(1)
+        let separatorViewTopMargin = CGFloat(9)
+        roundedView.addSubview(separatorView)
+        frameHeight += separatorViewTopMargin
+        
+        separatorView.frame.size = CGSize(width: screenWidth - 40, height: separatorViewHeight)
+        separatorView.frame.origin = CGPoint(x: leftOffset + 1, y: frameHeight)
+        separatorView.backgroundColor = UIColor(white: 0.929, alpha: 1)
+        
+        frameHeight += separatorViewHeight
+        
+        let dateLabel = UILabel()
+        let dateLabelHeight = CGFloat(14)
+        let dateLabelTopMargin = CGFloat(14)
+        let dateLabelBottomMargin = CGFloat(20)
+        roundedView.addSubview(dateLabel)
+        frameHeight += dateLabelTopMargin
+        
+        let dateText = "сегодня, в 22:30"
+        dateLabel.frame.size = CGSize(width: dateText.width(withConstrainedHeight: 14, font: .systemFont(ofSize: 11, weight: .medium)), height: dateLabelHeight)
+        dateLabel.frame.origin = CGPoint(x: leftOffset + 4, y: frameHeight)
+        dateLabel.text = dateText
+        dateLabel.textColor = UIColor(white: 0.847, alpha: 1)
+        dateLabel.font = .systemFont(ofSize: 11, weight: .medium)
+        
+        let authorLabel = UILabel()
+        let authorLabelHeight = CGFloat(14)
+        roundedView.addSubview(authorLabel)
+        
+        let authorText = "Динар Хайруллин"
+        authorLabel.frame.size = CGSize(width: authorText.width(withConstrainedHeight: authorLabelHeight, font: .systemFont(ofSize: 11)), height: authorLabelHeight)
+        authorLabel.frame.origin = CGPoint(x: screenWidth / 2 - authorLabel.frame.size.width / 2, y: frameHeight)
+        authorLabel.text = authorText
+        authorLabel.textColor = UIColor(red: 0.608, green: 0.608, blue: 0.616, alpha: 1)
+        authorLabel.font = .systemFont(ofSize: 11)
+        
+        let statusIndicatorView = UIView()
+        let statusIndicatorViewHeight = CGFloat(5)
+        roundedView.addSubview(statusIndicatorView)
+        
+        statusIndicatorView.frame.size = CGSize(width: statusIndicatorViewHeight, height: statusIndicatorViewHeight)
+        statusIndicatorView.frame.origin = CGPoint(x: screenWidth - 28 - statusIndicatorViewHeight, y: frameHeight + 5)
+        statusIndicatorView.backgroundColor = UIColor(red: 0.102, green: 0.824, blue: 0.153, alpha: 1)
+        statusIndicatorView.layer.cornerRadius = statusIndicatorViewHeight / 2
+        
+        let statusLabel = UILabel()
+        let statusLabelHeight = CGFloat(14)
+        roundedView.addSubview(statusLabel)
+        
+        let statusText = "Открыт"
+        statusLabel.frame.size = CGSize(width: statusText.width(withConstrainedHeight: statusLabelHeight, font: .systemFont(ofSize: 11, weight: .medium)), height: statusLabelHeight)
+        statusLabel.frame.origin = CGPoint(x: statusIndicatorView.frame.origin.x - statusLabel.frame.size.width - 4, y: frameHeight)
+        statusLabel.text = statusText
+        statusLabel.textColor = UIColor(red: 0.102, green: 0.824, blue: 0.153, alpha: 1)
+        statusLabel.font = .systemFont(ofSize: 11, weight: .medium)
+        
+        frameHeight += dateLabelHeight
+        frameHeight += dateLabelBottomMargin
+        
+        frameHeight += roundedViewMargin
+        
+        roundedView.frame.size = CGSize(width: screenWidth - 14, height: frameHeight - roundedViewMargin * 2)
+        frameCell.frame.size = CGSize(width: screenWidth - 14, height: frameHeight)
+        
+        cellHeight = frameHeight
+        
+        return frameCell
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -496,6 +707,7 @@ class ReportsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func getReportsList(_ action: reportsListAction) {
         switch action {
         case .init:
+            
             self.reportsList = BugTracker.ReportsList(query: "", completion: { (response) in
                 
                 if response.success {

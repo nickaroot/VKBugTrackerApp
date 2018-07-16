@@ -98,6 +98,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
                 let doc = try HTML(html: String(describing: contents), encoding: .windowsCP1251)
                 
+                dump(doc)
+                
                 let name = doc.at_css(".mem_link")?.text!
                 let stat = String(describing: (doc.at_css(".bt_reporter_content_block")?.text!)!.split(separator: " ")[0])
                 self.statLabel.text = stat

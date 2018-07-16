@@ -14,7 +14,7 @@ class ReportsTableViewCell: UITableViewCell, UICollectionViewDataSource, UIColle
     @IBOutlet weak var productTitleLabel: UILabel!
     @IBOutlet weak var bookmarkButton: UIButton!
     
-    @IBOutlet weak var titleLabel: UITextViewFixed!
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
